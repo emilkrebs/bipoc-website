@@ -3,31 +3,51 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: rgb(var(--foreground-rgb));
+	@apply bg-neutral-800
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	.filter-white {
+		filter: invert(1);
+	}
+
+	.filter-darken {
+		filter: brightness(0.8);
+	}
+
+	.fg-shine {
+		@apply relative text-transparent bg-clip-text animate-shine;
+		@apply bg-gradient-to-r from-violet-500 via-red-500 to-violet-500;
+		background-size: 200% 100%;
+	}
+
+	.bg-shine {
+		@apply relative bg-gradient-to-r from-violet-500 via-red-500 to-violet-500 animate-shine;
+		background-size: 200% 100%;
+	}
+
+	@keyframes shine {
+		0% {
+			background-position: 500%;
+		}
+
+		100% {
+			background-position: -500%;
+		}
+	}
 }
