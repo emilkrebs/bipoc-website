@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
 	return (
-		<footer className="flex flex-col items-center justify-between w-full gap-4 px-4 py-6">
+		<footer className="flex flex-col items-center justify-between w-full gap-6 px-4 py-6 rounded-t-xl bg-neutral-800">
 			{/* Social Media Section */}
 			<SocialMediaLinks />
 
@@ -14,7 +14,7 @@ export default function Footer() {
 				<Link href="/contact" className="text-white hover:underline">Contact</Link>
 			</div>
 
-			<p className="text-xs">Made with ❤️ by <Link className="hover:underline" href="https://emilkrebs.dev/" target="_blank">Emil Krebs</Link></p>
+			<p className="mt-4 text-xs">Made with ❤️ by <Link className="hover:underline" href="https://emilkrebs.dev/" target="_blank">Emil Krebs</Link></p>
 		</footer>
 	);
 }
