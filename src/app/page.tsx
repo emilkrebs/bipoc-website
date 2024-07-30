@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import LinkButton from "./components/link-button";
+import InstagramPosts from "./components/instagram-posts";
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center justify-between min-h-screen bg-[url(/static.jpg)] bg-cover bg-top bg-fixed">
+		<main className="flex flex-col items-center justify-between min-h-screen bg-[url(/static.jpg)] bg-cover bg-fixed">
 
 			<LandingSection />
 
@@ -14,13 +15,11 @@ export default function Home() {
 
 			<FaqSection />
 
-			<div className="flex flex-wrap items-center justify-between w-full gap-16 p-16 mt-8">
-				<Image className="rounded-md shadow-2xl cursor-pointer size-80" src="instagram/registration_open.jpg" alt="Registraion Open" width={100} height={100} />
-				<Image className="rounded-md shadow-2xl cursor-pointer size-80" src="instagram/call_to_action.jpg" alt="call to action" width={100} height={100} />
-				<Image className="rounded-md shadow-2xl cursor-pointer size-80" src="logo.jpg" alt="Logo" width={100} height={100} />
-				<Image className="rounded-md shadow-2xl cursor-pointer size-80" src="instagram/we_are_back.jpg" alt="We are back" width={100} height={100} />
-			</div>
+			<Seperator />
 
+			<InstagramPosts	/>
+
+			<Seperator />
 		</main>
 	);
 }
@@ -139,5 +138,11 @@ function FaqSection() {
 				</div>
 			</div>
 		</section>
+	);
+}
+ 
+function Seperator() {
+	return (
+		<div className="h-2 my-16 bg-white rounded-full shadow-2xl w-80" />
 	);
 }
