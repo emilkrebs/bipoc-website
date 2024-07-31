@@ -15,7 +15,7 @@ export default function InstagramPosts() {
 		},
 		{
 			src: "logo.jpg",
-			alt: "BIPoC Climate Justice Conference",
+			alt: "BIPoC Climate Justice Summit",
 			link: "https://www.instagram.com/p/CzEugRRMBhH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{

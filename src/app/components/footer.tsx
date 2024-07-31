@@ -10,8 +10,8 @@ export default function Footer() {
 			{/* Legal section */}
 			<div className="flex flex-col items-center justify-between gap-4 sm:gap-16 sm:flex-row w-fit">
 				<Link href="/imprint" className="text-white hover:underline">Imprint</Link>
-				<Link href="/pricacy" className="text-white hover:underline">Privacy Policy</Link>
-				<Link href="/contact" className="text-white hover:underline">Contact</Link>
+				<Link href="/privacy" className="text-white hover:underline">Privacy Policy</Link>
+				<Link href="mailto:bipoconference2020@riseup.net" className="text-white hover:underline">Contact</Link>
 			</div>
 
 			<p className="mt-4 text-xs">Made with ❤️ by <Link className="hover:underline" href="https://emilkrebs.dev/" target="_blank">Emil Krebs</Link></p>

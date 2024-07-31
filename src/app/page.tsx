@@ -4,6 +4,19 @@ import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
 
+const aboutMarkdown = `
+We are a collective of BIPoC individuals based in Europe,
+deeply concerned about the urgent need for a more inclusive climate justice movement. Navigating predominantly white spaces, we’ve experienced firsthand the pervasive racism, eurocentrism, and ongoing colonial legacies that shape the climate crisis.
+Traditional climate justice discourse often overlooks the specific challenges faced by racialized, gendered, and classed bodies. This invisibility has led to a movement that frequently fails to address the root causes of climate inequality. We believe that centering the voices and experiences of BIPoC communities is essential to creating a truly just and equitable future.
+
+## Our Mission
+Our summit aims to provide a safe and empowering space for BIPoC activists and organizers across Europe to connect, share knowledge, and develop strategies for collective action. By prioritizing skill-sharing, diversifying action methods, and addressing overlooked social justice issues, we seek to build a strong and resilient BIPoC-led climate justice movement.
+
+Join us as we work towards a world where climate justice is synonymous with racial, social, and economic justice.
+`;
+
+const registerLink = "https://form.jotform.com/241974035690057";
+
 export default function Home() {
 	return (
 		<main className="min-h-screen">
@@ -13,7 +26,7 @@ export default function Home() {
 			<AboutSection />
 
 
-			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-cover md:px-28 gap-y-32 bg-[url(/background_2.jpg)]">
+			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-cover md:px-32 gap-y-32 bg-[url(/background_2.jpg)]">
 
 				<MapsSection />
 
@@ -45,7 +58,7 @@ function LandingSection() {
 				</div>
 
 				<div className="flex flex-col items-center justify-center w-full gap-2 p-4">
-					<LinkButton href="">Register Now!</LinkButton>
+					<LinkButton href={registerLink}>Register Now!</LinkButton>
 
 					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black rounded-md bg-opacity-70">
 						<Link href="" className="font-bold text-white hover:underline">View Schedule</Link>
@@ -74,15 +87,13 @@ function LandingSection() {
 // TODO: Rewrite text
 function AboutSection() {
 	return (
-		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-28">
-			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 mt-8 lg:flex-row">
-				<Image className="rounded-lg shadow-lg w-max lg:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Conference" width={100} height={100} />
+		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-32">
+			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
+				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Summit" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start">
 					<h2 className="w-full text-4xl font-bold border-b-2">About</h2>
 					<div className="text-wrap w-fit mt-6">
-						<strong>BIPoC Climate Justice Conference</strong> is a conference for Black, Indigenous, and People of Color (BIPoC) to discuss climate change and environmental justice. As BIPoC individuals navigating predominantly white European climate spaces, we aim to create a dedicated platform for our communities.
-						<h3 className="mt-2 font-bold">Our Mission</h3>
-						We seek to address the urgent need for decolonial and intersectional approaches to climate justice, often overlooked in mainstream discourse. Our conference will foster connection, skill-sharing, and networking among BIPoC climate activists, centering our experiences and agendas. We invite collaboration with the Global South to enrich our understanding and actions.
+						<RenderMarkdown content={aboutMarkdown} />
 					</div>
 				</div>
 			</div>
@@ -100,7 +111,7 @@ function MapsSection() {
 					<p className="text-base">Wukania Projektehof, 16359 Biesenthal</p>
 				</div>
 				<iframe
-					className="w-full h-[32em] rounded-b-lg"
+					className="w-full h-[38em] rounded-b-lg"
 					loading="lazy"
 					allowFullScreen
 					referrerPolicy="no-referrer-when-downgrade"
@@ -117,18 +128,15 @@ function FaqSection() {
 		{
 			question: "What is the BIPOC Only Climate Justice Summit?",
 			answer: "The BIPOC Only Climate Justice Summit 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safe space for BIPOC voices, experiences, and leadership in the climate justice movement.",
+			open: true,
 		},
 		{
 			question: "Who can attend the summit?",
-			answer: "The conference is open to all Black, Indigenous, and People of Color (BIPoC) individuals. We welcome activists, scholars, artists, and community members who are interested in climate justice and environmental issues.",
+			answer: "The summit is open to all Black, Indigenous, and People of Color (BIPoC) individuals. We welcome activists, scholars, artists, and community members who are interested in climate justice and environmental issues.",
 		},
 		{
 			question: "Why is the summit BIPOC only?",
 			answer: "The summit is BIPOC only to center and prioritize the voices and experiences of communities most affected by climate change and often marginalized in mainstream environmental movements. This exclusive space allows for more open and honest discussions, fostering solidarity and collaborative action among BIPOC individuals.",
-		},
-		{
-			question: "What topics will be covered at the summit?",
-			answer: "The conference will cover a wide range of topics related to climate justice and environmental issues. Some of the key themes include decolonial approaches to climate justice, intersectionality, and the role of BIPoC communities in the fight against climate change.",
 		},
 		{
 			question: "What topics will be covered at the summit?",
@@ -147,7 +155,8 @@ function FaqSection() {
 		},
 		{
 			question: "How can I register for the summit?",
-			answer: "Please fill out this form: [Click Here](https://form.jotform.com/241974035690057). Early registration is encouraged as spaces are limited. ALL participants can apply for reimbursement of transportation fees, please buy the cheapest ticket and we will reimburse you at the conference with the receipt. Food will be provided free of cost at the venue. ",
+			answer: `Please fill out this form: [Click Here](${registerLink}). Early registration is encouraged as spaces are limited. ALL participants can apply for reimbursement of transportation fees, please buy the cheapest ticket and we will reimburse you at the summit with the receipt. Food will be provided free of cost at the venue. `,
+			open: true,
 		},
 		{
 			question: "Is there a virtual attendance option?",
@@ -161,7 +170,7 @@ function FaqSection() {
 				<h2 className="text-4xl font-bold">FAQ</h2>
 				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
 					{faqs.map((faq, index) => (
-						<details className="w-full" key={index}>
+						<details className="w-full" key={index} open={faq.open}>
 							<summary className="text-lg font-bold cursor-pointer">{faq.question}</summary>
 							<RenderMarkdown content={faq.answer} />
 						</details>
