@@ -51,16 +51,16 @@ function LandingSection() {
 			<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 				<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
 					<div className="flex flex-row items-baseline justify-between w-full text-red-500 text-start">
-						<h1 className="text-xl font-bold sm:text-2xl lg:text-9xl leading-8">BIPoC</h1>
-						<h2 className="text-xl lg:text-4xl">Climate Justice Summit</h2>
+						<h1 className="text-xl font-bold leading-8 sm:text-2xl lg:text-9xl">BIPoC</h1>
+						<h2 className="px-1 py-0 mb-1 text-xl font-bold lg:text-4xl">Climate Justice Summit</h2>
 					</div>
 					<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
 				</div>
 
-				<div className="flex flex-col items-center justify-center w-full gap-2 p-4">
+				<div className="flex flex-col items-center justify-center w-full gap-4 p-4">
 					<LinkButton href={registerLink}>Register Now!</LinkButton>
 
-					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black rounded-md bg-opacity-70">
+					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
 						<Link href="" className="font-bold text-white hover:underline">View Schedule</Link>
 					</div>
 				</div>
@@ -92,7 +92,7 @@ function AboutSection() {
 				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Summit" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start">
 					<h2 className="w-full text-4xl font-bold border-b-2">About</h2>
-					<div className="text-wrap w-fit mt-6">
+					<div className="mt-6 text-wrap w-fit">
 						<RenderMarkdown content={aboutMarkdown} />
 					</div>
 				</div>
@@ -166,7 +166,7 @@ function FaqSection() {
 
 	return (
 		<section id="faq" className="flex flex-col items-center justify-center w-full">
-			<div className="flex flex-col items-start justify-start w-full p-8  bg-white bg-bottom rounded-lg shadow-lg md:p-16 text-neutral-800">
+			<div className="flex flex-col items-start justify-start w-full p-8 bg-white bg-bottom rounded-lg shadow-lg md:p-16 text-neutral-800">
 				<h2 className="text-4xl font-bold">FAQ</h2>
 				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
 					{faqs.map((faq, index) => (

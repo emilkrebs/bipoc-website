@@ -41,7 +41,7 @@ function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
 				View Post
 			</p>
 			<Image
-				className="object-cover w-full h-full"
+				className="object-cover w-full h-full rounded-md"
 				src={src}
 				alt={alt}
 				width={100}
