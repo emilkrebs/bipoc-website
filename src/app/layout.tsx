@@ -4,8 +4,8 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 
 export const metadata: Metadata = {
-	title: "BIPOC Climate Justice Network",
-	description: ""
+	title: "BIPOC Climate Justice Summit",
+	description: "",
 };
 
 export default function RootLayout({
