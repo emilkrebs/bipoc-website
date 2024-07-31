@@ -2,46 +2,70 @@ import Link from "next/link";
 import Image from "next/image";
 import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
+import RenderMarkdown from "./components/markdown";
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center justify-between min-h-screen bg-[url(/static.jpg)] bg-cover bg-fixed">
+		<main className="min-h-screen">
 
 			<LandingSection />
 
 			<AboutSection />
 
-			<MapsSection />
 
-			<FaqSection />
+			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-cover md:px-28 gap-y-32 bg-[url(/background_2.jpg)]">
 
-			<Seperator />
+				<MapsSection />
 
-			<InstagramPosts	/>
+				<FaqSection />
 
-			<Seperator />
+				<Seperator />
+
+				<InstagramPosts />
+
+				<Seperator />
+
+			</div>
+
 		</main>
 	);
 }
 
 function LandingSection() {
 	return (
-		<section className="flex flex-col items-center justify-center bg-[url(/background.jpg)] min-h-screen size-full">
+		<section className="flex flex-col items-center justify-center bg-[url(/background.jpg)] bg-fixed min-h-screen size-full">
 
-			<div className="flex flex-col items-center justify-center gap-4 mb-16 md:gap-8 w-fit">
+			<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 				<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
-					<h1 className="text-xl font-bold text-red-500 sm:text-2xl lg:text-4xl text-start">Next Conference will take place</h1>
-					<span className="px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">9.09 - 13.09.2024</span>
+					<div className="flex flex-row items-baseline justify-between w-full text-red-500 text-start">
+						<h1 className="text-xl font-bold sm:text-2xl lg:text-9xl leading-8">BIPoC</h1>
+						<h2 className="text-xl lg:text-4xl">Climate Justice Summit</h2>
+					</div>
+					<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
 				</div>
 
 				<div className="flex flex-col items-center justify-center w-full gap-2 p-4">
 					<LinkButton href="">Register Now!</LinkButton>
 
-					<div className="flex flex-row items-center justify-center gap-2 px-1 bg-black rounded-md bg-opacity-70">
+					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black rounded-md bg-opacity-70">
 						<Link href="" className="font-bold text-white hover:underline">View Schedule</Link>
 					</div>
 				</div>
 			</div>
+
+			{/* Collectives
+
+			<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white bg-blue-500 bg-opacity-65">
+				<h2 className="text-4xl font-bold">Collectives</h2>
+
+				<div className="flex flex-wrap items-center justify-center w-full gap-8 p-8">
+					
+					<Link className="w-64" href="https://herewedrawtheline.org/">
+						<Image className="object-cover size-fit" src="collectives/herewedrawtheline.svg" alt="Collectives" width={100} height={100} />
+					</Link>
+				
+				</div>
+			</div> */}
 
 		</section>
 	);
@@ -50,12 +74,12 @@ function LandingSection() {
 // TODO: Rewrite text
 function AboutSection() {
 	return (
-		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg rounded-b-xl lg:p-16 bg-gradient-to-br from-blue-500 to-sky-500">
-			<div className="flex flex-col-reverse items-start justify-center w-full gap-16 mt-8 lg:flex-row">
+		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-28">
+			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 mt-8 lg:flex-row">
 				<Image className="rounded-lg shadow-lg w-max lg:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Conference" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start">
 					<h2 className="w-full text-4xl font-bold border-b-2">About</h2>
-					<div className="text-wrap w-fit xl:w-[42em] mt-6">
+					<div className="text-wrap w-fit mt-6">
 						<strong>BIPoC Climate Justice Conference</strong> is a conference for Black, Indigenous, and People of Color (BIPoC) to discuss climate change and environmental justice. As BIPoC individuals navigating predominantly white European climate spaces, we aim to create a dedicated platform for our communities.
 						<h3 className="mt-2 font-bold">Our Mission</h3>
 						We seek to address the urgent need for decolonial and intersectional approaches to climate justice, often overlooked in mainstream discourse. Our conference will foster connection, skill-sharing, and networking among BIPoC climate activists, centering our experiences and agendas. We invite collaboration with the Global South to enrich our understanding and actions.
@@ -69,14 +93,14 @@ function AboutSection() {
 
 function MapsSection() {
 	return (
-		<section id="location" className="flex flex-col items-center justify-center w-full px-16 text-white mt-28">
-			<div className="w-full rounded-lg shadow-lg bg-neutral-800">
+		<section id="location" className="flex flex-col items-center justify-center w-full mt-32 text-neutral-800">
+			<div className="w-full bg-white rounded-lg shadow-lg">
 				<div className="flex flex-col items-baseline justify-center w-full gap-2 p-4 sm:flex-row">
 					<h2 className="text-4xl font-bold">Location</h2>
 					<p className="text-base">Wukania Projektehof, 16359 Biesenthal</p>
 				</div>
 				<iframe
-					className="w-full h-[32em]"
+					className="w-full h-[32em] rounded-b-lg"
 					loading="lazy"
 					allowFullScreen
 					referrerPolicy="no-referrer-when-downgrade"
@@ -91,58 +115,65 @@ function MapsSection() {
 function FaqSection() {
 	const faqs = [
 		{
-			question: "What is the BIPoC Climate Justice Conference?",
-			answer: "The BIPoC Climate Justice Conference is a conference for Black, Indigenous, and People of Color (BIPoC) to discuss climate change and environmental justice. As BIPoC individuals navigating predominantly white European climate spaces, we aim to create a dedicated platform for our communities.",
+			question: "What is the BIPOC Only Climate Justice Summit?",
+			answer: "The BIPOC Only Climate Justice Summit 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safe space for BIPOC voices, experiences, and leadership in the climate justice movement.",
 		},
 		{
-			question: "Who can attend the conference?",
+			question: "Who can attend the summit?",
 			answer: "The conference is open to all Black, Indigenous, and People of Color (BIPoC) individuals. We welcome activists, scholars, artists, and community members who are interested in climate justice and environmental issues.",
 		},
 		{
-			question: "How can I register for the conference?",
-			answer: "You can register for the conference by filling out the registration form on our website. Registration is free and open to all BIPoC individuals.",
+			question: "Why is the summit BIPOC only?",
+			answer: "The summit is BIPOC only to center and prioritize the voices and experiences of communities most affected by climate change and often marginalized in mainstream environmental movements. This exclusive space allows for more open and honest discussions, fostering solidarity and collaborative action among BIPOC individuals.",
 		},
 		{
-			question: "What topics will be covered at the conference?",
+			question: "What topics will be covered at the summit?",
 			answer: "The conference will cover a wide range of topics related to climate justice and environmental issues. Some of the key themes include decolonial approaches to climate justice, intersectionality, and the role of BIPoC communities in the fight against climate change.",
 		},
 		{
-			question: "Will there be opportunities for networking and collaboration?",
-			answer: "Yes, the conference will provide opportunities for networking, collaboration, and skill-sharing among BIPoC climate activists. We encourage participants to connect with one another and build relationships that can support their work in the future.",
+			question: "What topics will be covered at the summit?",
+			answer: `The summit will cover a range of topics including:
+- The disproportionate impact of climate change on BIPOC communities.
+- Environmental racism and its effects.
+- Indigenous knowledge and practices in climate resilience.
+- Strategies for community organizing and advocacy.
+- Policy discussions and climate justice initiatives.
+- Intersectionality and the climate movement.
+- Abolitionist perspectives and applications
+- Different forms of activism (art, dance, music, writing)
+- Queering ecologies
+- Practical skill sharing (plant knowledge, media skills, etc.) 
+`,
+		},
+		{
+			question: "How can I register for the summit?",
+			answer: "Please fill out this form: [Click Here](https://form.jotform.com/241974035690057). Early registration is encouraged as spaces are limited. ALL participants can apply for reimbursement of transportation fees, please buy the cheapest ticket and we will reimburse you at the conference with the receipt. Food will be provided free of cost at the venue. ",
+		},
+		{
+			question: "Is there a virtual attendance option?",
+			answer: "No, we are sorry, we do not have the capacity to offer this.",
 		},
 	];
 
 	return (
-		<section id="faq" className="flex flex-col items-center justify-center w-full p-16">
-			<div className="flex flex-col items-start justify-start w-full p-16 bg-white rounded-lg shadow-lg text-neutral-800">
+		<section id="faq" className="flex flex-col items-center justify-center w-full">
+			<div className="flex flex-col items-start justify-start w-full p-8  bg-white bg-bottom rounded-lg shadow-lg md:p-16 text-neutral-800">
 				<h2 className="text-4xl font-bold">FAQ</h2>
-				<div className="flex flex-col items-start justify-start w-full gap-8 mt-8">
+				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
 					{faqs.map((faq, index) => (
 						<details className="w-full" key={index}>
 							<summary className="text-lg font-bold cursor-pointer">{faq.question}</summary>
-							<p className="mt-2">{faq.answer}</p>
+							<RenderMarkdown content={faq.answer} />
 						</details>
 					))}
-					{/* 
-					<div className="flex flex-col items-baseline justify-start w-full gap-2 sm:flex-row">
-						<h2 className="text-4xl font-bold">Location</h2>
-						<p className="text-sm">Wukania Projektehof, 16359 Biesenthal</p>
-					</div>
-					<iframe
-						className="w-full h-[32em]"
-						loading="lazy"
-						allowFullScreen
-						referrerPolicy="no-referrer-when-downgrade"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1971.928581682675!2d13.613156234073877!3d52.77285225279253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a9b1de8298ed33%3A0xa84fe45f464a4778!2sWukania%20Projektehof!5e0!3m2!1sen!2sde!4v1721846394384!5m2!1sen!2sde"
-					/> */}
 				</div>
 			</div>
 		</section>
 	);
 }
- 
+
 function Seperator() {
 	return (
-		<div className="h-2 my-16 bg-white rounded-full shadow-2xl w-80" />
+		<div className="w-full h-2 my-16 bg-white rounded-full shadow-2xl max-w-80" />
 	);
 }

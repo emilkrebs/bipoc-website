@@ -26,7 +26,7 @@ export default function InstagramPosts() {
 	];
 
 	return (
-		<section id="instagram" className="flex flex-wrap items-center justify-center w-full gap-16 p-16 lg:gap-28">
+		<section id="instagram" className="flex flex-wrap items-center justify-between w-full gap-16 lg:gap-28">
 			{posts.map((post, index) => (
 				<Post key={index} src={post.src} alt={post.alt} link={post.link} />
 			))}
@@ -36,15 +36,17 @@ export default function InstagramPosts() {
 
 function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
 	return (
-		<Link href={link} target="_blank" className="rounded-md shadow-2xl cursor-pointer size-80">
-			<p className="absolute flex items-center justify-center transition-opacity bg-black opacity-0 size-80 hover:bg-opacity-45 hover:opacity-100">View Post</p>
+		<Link href={link} target="_blank" className="relative w-full rounded-md shadow-2xl cursor-pointer md:w-80">
+			<p className="absolute flex items-center justify-center w-full h-full transition-opacity bg-black opacity-0 hover:bg-opacity-45 hover:opacity-100">
+				View Post
+			</p>
 			<Image
-				className="size-full"
+				className="object-cover w-full h-full"
 				src={src}
 				alt={alt}
 				width={100}
 				height={100}
 			/>
 		</Link>
-	)
+	);
 }
