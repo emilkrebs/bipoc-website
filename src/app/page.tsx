@@ -38,6 +38,18 @@ export default function Home() {
 
 				<Seperator />
 
+				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
+				<h2 className="text-4xl font-bold">Sponsored by</h2>
+
+				<div className="flex flex-wrap items-center justify-center w-full gap-8 p-8">
+					
+					<Link className="w-64" href="https://herewedrawtheline.org/">
+						<Image className="object-cover size-fit" src="sponsor/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
+					</Link>
+				
+				</div>
+			</div> 
+
 			</div>
 
 		</main>
@@ -65,21 +77,6 @@ function LandingSection() {
 					</div>
 				</div>
 			</div>
-
-			{/* Collectives
-
-			<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white bg-blue-500 bg-opacity-65">
-				<h2 className="text-4xl font-bold">Collectives</h2>
-
-				<div className="flex flex-wrap items-center justify-center w-full gap-8 p-8">
-					
-					<Link className="w-64" href="https://herewedrawtheline.org/">
-						<Image className="object-cover size-fit" src="collectives/herewedrawtheline.svg" alt="Collectives" width={100} height={100} />
-					</Link>
-				
-				</div>
-			</div> */}
-
 		</section>
 	);
 }
@@ -103,6 +100,7 @@ function AboutSection() {
 
 
 function MapsSection() {
+	const embedLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40776.05832649755!2d13.606351548780625!3d52.76431636004535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a9b1de8298ed33%3A0xa84fe45f464a4778!2sWukania%20Projektehof!5e0!3m2!1sen!2sde!4v1722519400038!5m2!1sen!2sd";
 	return (
 		<section id="location" className="flex flex-col items-center justify-center w-full mt-32 text-neutral-800">
 			<div className="w-full bg-white rounded-lg shadow-lg">
@@ -111,11 +109,11 @@ function MapsSection() {
 					<p className="text-base">Wukania Projektehof, 16359 Biesenthal</p>
 				</div>
 				<iframe
-					className="w-full h-[38em] rounded-b-lg"
+					className="w-full h-[26em] lg:h-[42em] rounded-b-lg"
 					loading="lazy"
 					allowFullScreen
 					referrerPolicy="no-referrer-when-downgrade"
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1971.928581682675!2d13.613156234073877!3d52.77285225279253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a9b1de8298ed33%3A0xa84fe45f464a4778!2sWukania%20Projektehof!5e0!3m2!1sen!2sde!4v1721846394384!5m2!1sen!2sde"
+					src={embedLink}
 				/>
 			</div>
 		</section>
