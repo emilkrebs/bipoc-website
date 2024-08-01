@@ -124,7 +124,7 @@ function MapsSection() {
 function FaqSection() {
 	const faqs = [
 		{
-			question: "What is the BIPOC Only Climate Justice Summit?",
+			question: "What is the BIPOC Climate Justice Summit?",
 			answer: "The BIPOC Only Climate Justice Summit 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safer space for BIPOC voices, experiences, and leadership in the climate justice movement.",
 			open: true,
 		},
