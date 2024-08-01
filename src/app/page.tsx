@@ -61,7 +61,7 @@ function LandingSection() {
 					<LinkButton href={registerLink}>Register Now!</LinkButton>
 
 					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
-						<Link href="" className="font-bold text-white hover:underline">View Schedule</Link>
+						<Link href="https://docs.google.com/spreadsheets/d/13K626izh8SPU73pMHAUd_dilP_uUZVPrTHFdv_sxCBA/edit?gid=521134214#gid=521134214" className="font-bold text-white hover:underline">View Schedule</Link>
 					</div>
 				</div>
 			</div>
