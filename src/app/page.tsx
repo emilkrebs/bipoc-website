@@ -42,8 +42,8 @@ export default function Home() {
 
 				<div className="flex flex-wrap items-center justify-center w-full gap-8 p-8">
 					
-					<Link className="w-64" href="https://herewedrawtheline.org/">
-						<Image className="object-cover size-fit" src="/sponsor/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
+					<Link className="w-64 h-fit" href="https://herewedrawtheline.org/">
+						<Image className="object-cover size-max" src="/sponsor/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
 					</Link>
 				
 				</div>
