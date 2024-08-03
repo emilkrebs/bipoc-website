@@ -4,6 +4,7 @@ import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://bipoclimatejusticenetwork.org/"),
 	title: "BIPOC Climate Justice Summit",
 	description: "Join us at the BIPOC Climate Justice Summit on Sept 9-13. Registrations are open!",
 	creator: "Emil Krebs",
