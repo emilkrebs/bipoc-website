@@ -12,7 +12,7 @@ export default function RenderMarkdown(props: MarkdownProps) {
 				h1: ({ node, ...props }) => <h1 className="mt-4 mb-2 text-xl font-bold" {...props} />,
 				h2: ({ node, ...props }) => <h2 className="mt-4 mb-2 text-lg font-bold" {...props} />,
 				h3: ({ node, ...props }) => <h3 className="mt-4 mb-2 text-base font-bold" {...props} />,
-				a: ({ node, ...props }) => <Link target="_blank" passHref className="mb-2 text-blue-600 hover:underline" href={props.href || ""} {...props} />,
+				a: ({ node, ...props }) => <Link className="mb-2 text-blue-600 hover:underline" href={props.href || ""} {...props} />,
 				p: ({ node, ...props }) => <p className="mb-2 text-base" {...props} />,
 				ul: ({ node, ...props }) => <ul className="pl-4 mb-2 ml-2 list-disc" {...props} />,
 				ol: ({ node, ...props }) => <ol className="pl-4 mb-2 list-decimal" {...props} />,

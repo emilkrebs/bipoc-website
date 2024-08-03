@@ -5,14 +5,13 @@ import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
 
 const aboutMarkdown = `
-We are a collective of BIPoC individuals based in Europe,
-deeply concerned about the urgent need for a more inclusive climate justice movement. Navigating predominantly white spaces, we’ve experienced firsthand the pervasive racism, eurocentrism, and ongoing colonial legacies that shape the climate crisis.
-Traditional climate justice discourse often overlooks the specific challenges faced by racialized, gendered, and classed bodies. This invisibility has led to a movement that frequently fails to address the root causes of climate inequality. We believe that centering the voices and experiences of BIPoC communities is essential to creating a truly just and equitable future.
+We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
 
-## Our Mission
-Our summit aims to provide a safe and empowering space for BIPoC activists and organizers across Europe to connect, share knowledge, and develop strategies for collective action. By prioritizing skill-sharing, diversifying action methods, and addressing overlooked social justice issues, we seek to build a strong and resilient BIPoC-led climate justice movement.
+We view climate justice as a broad and inclusive concept that encompasses gender justice, the abolition of prisons and police, and anticolonial struggles. We have a budget to support those providing input and to cover travel expenses.
 
-Join us as we work towards a world where climate justice is synonymous with racial, social, and economic justice.
+If you’re part of a collective, an activist, or looking to get involved, we’d love for you to join us! Check out our program and let us know if you’d like to participate.
+
+We hope our invitation interests you and look forward to your [registration](#faq)!
 `;
 
 const registerLink = "https://form.jotform.com/241974035690057";
@@ -26,7 +25,7 @@ export default function Home() {
 			<AboutSection />
 
 
-			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-cover md:px-32 gap-y-32 bg-[url(/background_2.jpg)]">
+			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.jpg)]">
 
 				<MapsSection />
 
@@ -62,9 +61,9 @@ function LandingSection() {
 
 			<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 				<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
-					<div className="flex flex-row items-baseline justify-between w-full text-red-500 text-start">
-						<h1 className="text-xl font-bold leading-8 sm:text-2xl lg:text-9xl">BIPoC</h1>
-						<h2 className="px-1 py-0 mb-1 text-xl font-bold lg:text-4xl">Climate Justice Summit</h2>
+					<div className="flex flex-col md:flex-row items-baseline justify-between w-full text-red-500 text-start">
+						<h1 className="font-bold leading-8 text-2xl sm:text-6xl lg:text-9xl">BIPoC</h1>
+						<h2 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">Climate Justice Summit</h2>
 					</div>
 					<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
 				</div>
@@ -88,7 +87,7 @@ function AboutSection() {
 			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
 				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Summit" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start">
-					<h2 className="w-full text-4xl font-bold border-b-2">About</h2>
+					<h2 className="w-full text-4xl font-bold">Dear BIPoCs of Europe,</h2>
 					<div className="mt-6 text-wrap w-fit">
 						<RenderMarkdown content={aboutMarkdown} />
 					</div>
