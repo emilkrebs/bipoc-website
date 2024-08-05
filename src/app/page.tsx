@@ -37,21 +37,27 @@ export default function Home() {
 
 				<Seperator />
 
+
 				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
-				<h2 className="text-4xl font-bold">Sponsored by</h2>
+					<h2 className="text-4xl font-bold">Collectives</h2>
 
-				<div className="flex flex-wrap items-baseline justify-center w-full h-fit gap-16 p-8">
-					
-					<Link className="w-64 h-fit" href="https://herewedrawtheline.org/">
-						<Image className="object-cover size-max" src="/sponsor/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
-					</Link>
-
-					<Link className="w-64 h-fit" href="https://www.bewegungsstiftung.de/">
-						<Image className="object-cover size-max" src="/sponsor/bewegungs_stiftung.svg" alt="Bewegungs Stiftung" width={100} height={100} />
-					</Link>
-				
+					<div className="flex flex-wrap items-baseline justify-center w-full h-fit gap-16 p-8">
+						<Link className="w-64 h-fit" href="https://herewedrawtheline.org/">
+							<Image className="object-cover size-max" src="/collectives/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
+						</Link>
+					</div>
 				</div>
-			</div> 
+
+
+				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
+					<h2 className="text-4xl font-bold">Sponsored by</h2>
+
+					<div className="flex flex-wrap items-baseline justify-center w-full h-fit gap-16 p-8">
+						<Link className="w-64 h-fit" href="https://www.bewegungsstiftung.de/">
+							<Image className="object-cover size-max" src="/sponsor/bewegungs_stiftung.svg" alt="Bewegungs Stiftung" width={100} height={100} />
+						</Link>
+					</div>
+				</div>
 
 			</div>
 
