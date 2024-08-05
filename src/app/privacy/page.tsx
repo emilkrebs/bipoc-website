@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import RenderMarkdown from "../components/markdown";
 
 const markdown = `
@@ -29,6 +30,10 @@ We reserve the right to update this privacy policy at any time. We will notify y
 
 If you have any questions about this privacy policy, please get in touch with us at [bipoconference2020@riseup.net](mailto:bipoconference2020@riseup.net).
 `;
+
+export const metadata: Metadata = {
+	title: "BIPoC Climate Justice Summit 2024 | Privacy Policy",
+};
 
 export default function Privacy() {
 	return (

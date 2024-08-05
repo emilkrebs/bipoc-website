@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import RenderMarkdown from "../components/markdown";
 
 const markdown = `
@@ -19,6 +20,10 @@ A permanent control of the linked pages is unreasonable without concrete evidenc
 
 Resposible for the website architecture and design: Emil Krebs
 `;
+
+export const metadata: Metadata = {
+	title: "BIPoC Climate Justice Summit 2024 | Imprint",
+};
 
 export default function Imprint() {
 	return (
