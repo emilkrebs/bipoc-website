@@ -3,12 +3,12 @@ import Image from "next/image";
 
 export default function Footer() {
 	return (
-		<footer className="flex flex-col items-center justify-between w-full gap-6 px-4 py-6 shadow-xl rounded-t-xl bg-neutral-800">
+		<footer className="flex flex-col items-center justify-between w-full gap-6 px-4 py-6 shadow-xl rounded-t-xl bg-neutral-800 text-white">
 			{/* Social Media Section */}
 			<SocialMediaLinks />
 
 			{/* Legal section */}
-			<div className="flex flex-col items-center justify-between gap-4 sm:gap-16 sm:flex-row w-fit text-white ">
+			<div className="flex flex-col items-center justify-between gap-4 sm:gap-16 sm:flex-row w-fit">
 				<Link href="/imprint" className="over:underline">Imprint</Link>
 				<Link href="/privacy" className="hover:underline">Privacy Policy</Link>
 				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">Contact</Link>
