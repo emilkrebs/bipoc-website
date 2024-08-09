@@ -4,22 +4,22 @@ import Link from 'next/link';
 export default function InstagramPosts() {
 	const posts = [
 		{
-			src: "instagram/registration_open.jpg",
+			src: "instagram/registration_open.webp",
 			alt: "Registration Open",
 			link: "https://www.instagram.com/p/C92UJbsIJth/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
-			src: "instagram/call_to_action.jpg",
+			src: "instagram/call_to_action.webp",
 			alt: "Call to Action",
 			link: "https://www.instagram.com/p/CzMHEzfsiys/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
-			src: "logo.jpg",
+			src: "logo.webp",
 			alt: "BIPoC Climate Justice Summit",
 			link: "https://www.instagram.com/p/CzEugRRMBhH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
-			src: "instagram/we_are_back.jpg",
+			src: "instagram/we_are_back.webp",
 			alt: "We are back!",
 			link: "https://www.instagram.com/p/C8_8KIXC1bX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		}
@@ -37,7 +37,7 @@ export default function InstagramPosts() {
 function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
 	return (
 		<Link href={link} target="_blank" className="relative w-full rounded-md shadow-2xl cursor-pointer md:w-80">
-			<p className="absolute flex items-center justify-center w-full h-full transition-opacity bg-black opacity-0 hover:bg-opacity-45 hover:opacity-100">
+			<p className="absolute flex items-center justify-center w-full h-full transition-opacity bg-black rounded-md opacity-0 hover:bg-opacity-45 hover:opacity-100">
 				View Post
 			</p>
 			<Image

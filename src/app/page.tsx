@@ -3,6 +3,7 @@ import Image from "next/image";
 import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
+import Collectives from "./components/collectives";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
@@ -25,12 +26,14 @@ export default function Home() {
 			<AboutSection />
 
 
-			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.jpg)]">
+			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
 
 				<MapsSection />
 
 				<FaqSection />
 
+				<Collectives />
+				
 				<Seperator />
 
 				<InstagramPosts />
@@ -39,20 +42,9 @@ export default function Home() {
 
 
 				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
-					<h2 className="text-4xl font-bold">Collectives</h2>
-
-					<div className="flex flex-wrap items-baseline justify-center w-full h-fit gap-16 p-8">
-						<Link className="w-64 h-fit" href="https://herewedrawtheline.org/">
-							<Image className="object-cover size-max" src="/collectives/herewedrawtheline.svg" alt="Here we draw the line" width={100} height={100} />
-						</Link>
-					</div>
-				</div>
-
-
-				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
 					<h2 className="text-4xl font-bold">Sponsored by</h2>
 
-					<div className="flex flex-wrap items-baseline justify-center w-full h-fit gap-16 p-8">
+					<div className="flex flex-wrap items-baseline justify-center w-full gap-16 p-8 h-fit">
 						<Link className="w-64 h-fit" href="https://www.bewegungsstiftung.de/">
 							<Image className="object-cover size-max" src="/sponsor/bewegungs_stiftung.svg" alt="Bewegungs Stiftung" width={100} height={100} />
 						</Link>
@@ -67,12 +59,12 @@ export default function Home() {
 
 function LandingSection() {
 	return (
-		<section className="flex flex-col items-center justify-center bg-[url(/background.jpg)] bg-fixed min-h-screen size-full">
+		<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
 
 			<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 				<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
-					<div className="flex flex-col md:flex-row items-baseline justify-between w-full text-red-500 text-start">
-						<h1 className="font-bold leading-8 text-2xl sm:text-6xl lg:text-9xl">BIPoC</h1>
+					<div className="flex flex-col items-baseline justify-between w-full text-red-500 md:flex-row text-start">
+						<h1 className="text-2xl font-bold leading-8 sm:text-6xl lg:text-9xl">BIPoC</h1>
 						<h2 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">Climate Justice Summit</h2>
 					</div>
 					<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
@@ -95,7 +87,7 @@ function AboutSection() {
 	return (
 		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-32">
 			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
-				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.jpg" alt="BIPoC Climate Justice Summit" width={100} height={100} />
+				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.webp" alt="BIPoC Climate Justice Summit" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start">
 					<h2 className="w-full text-4xl font-bold">Dear BIPoCs of Europe,</h2>
 					<div className="mt-6 text-wrap w-fit">
@@ -173,8 +165,8 @@ function FaqSection() {
 
 	return (
 		<section id="faq" className="flex flex-col items-center justify-center w-full">
-			<div className="flex flex-col items-start justify-start w-full p-8 bg-white bg-bottom rounded-lg shadow-lg md:p-16 text-neutral-800">
-				<h2 className="text-4xl font-bold">FAQ</h2>
+			<div className="flex flex-col items-start justify-start w-full p-8 bg-white bg-bottom rounded-lg shadow-lg text-neutral-800">
+			<h2 className="text-4xl font-bold border-b-2 border-black">FAQ</h2>
 				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
 					{faqs.map((faq, index) => (
 						<details className="w-full" key={index} open={faq.open}>
