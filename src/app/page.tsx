@@ -4,7 +4,7 @@ import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
 import Collectives from "./components/collectives";
-import Head from "next/head";
+import { Metadata } from "next";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
@@ -61,9 +61,8 @@ export default function Home() {
 function LandingSection() {
 	return (
 		<>
-			<Head>
-				<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high"  />
-			</Head>
+			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high"  />
+
 			<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
 
 				<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
@@ -94,11 +93,12 @@ function AboutSection() {
 		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-32">
 			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
 				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.webp" alt="BIPoC Climate Justice Summit" width={100} height={100} />
-				<div className="flex flex-col items-start justify-start">
+				<div className="flex flex-col items-start justify-start h-full">
 					<h2 className="w-full text-4xl font-bold">Dear BIPoCs of Europe,</h2>
 					<div className="mt-6 text-wrap w-fit">
 						<RenderMarkdown content={aboutMarkdown} />
 					</div>
+					<LinkButton className="mt-5" href="https://cryptpad.fr/pad/#/2/pad/edit/ToSKZSbnvFEpt+AfYvNt9bpP/">View Program</LinkButton>
 				</div>
 			</div>
 		</section>
