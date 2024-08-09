@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const imageRoot = "/collectives";
 
-const collectives: { href: string, src: string, title: string }[] = [
+const collectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
 		href: "https://linktr.ee/back2soilbasics",
 		src: `${imageRoot}/back2soilbasics.webp`,
@@ -30,34 +30,39 @@ const collectives: { href: string, src: string, title: string }[] = [
 		title: "Afrofeminas"
 	},
 	{
-		href: "https://bewegungsschule.org/",
-		src: `${imageRoot}/bewegungsschule.webp`,
-		title: "Bewegungsschule"
-	},
-	{
-		href: "https://www.ataec.com/user/274",
-		src: `${imageRoot}/colectivx.webp`,
-		title: "Colectivx Raíces Negras"
-	},
-	{
 		href: "https://www.instagram.com/colectivo.amra/",
 		src: `${imageRoot}/amra.webp`,
 		title: "AMRA COLLECTIVE"
 	},
 	{
+		href: "https://bewegungsschule.org/",
+		src: `${imageRoot}/bewegungsschule.webp`,
+		title: "Bewegungsschule",
+		rounded: true
+	},
+	{
+		href: "https://www.ataec.com/user/274",
+		src: `${imageRoot}/colectivx.webp`,
+		title: "Colectivx Raíces Negras",
+		rounded: true
+	},
+	{
 		href: "https://www.instagram.com/afrofem.marseille",
 		src: `${imageRoot}/afroqueerfem.webp`,
-		title: "AfroQueerFem"
+		title: "AfroQueerFem",
+		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/collettivo.menen/",
 		src: `${imageRoot}/menen_abegascn.webp`,
-		title: "Collettivo Menen Abegasc"
+		title: "Collettivo Menen Abegasc",
+		rounded: true
 	},
 	{
 		href: "https://iwspace.de/",
 		src: `${imageRoot}/iwspace.webp`,
-		title: "International Women* Space"
+		title: "International Women* Space",
+		rounded: true
 	},
 ];
 
@@ -70,14 +75,14 @@ export default function Collectives() {
 				{collectives.map((collective, index) => (
 					<Link key={index} className="transition-transform h-max group w-36 hover:-translate-y-1" href={collective.href} title={collective.title}>
 						<Image
-							className="object-cover size-max"
+							className={`object-cover size-max ${collective.rounded ? "rounded-full" : ""}`}
 							src={collective.src}
 							loading='lazy'
 							alt={collective.title}
 							width={100}
 							height={100}
 						/>
-						<span className="invisible block mt-2 text-xs font-light text-center group-hover:visible">{collective.title}</span>
+						<span className="invisible block py-2 text-xs font-semibold text-center group-hover:visible">{collective.title}</span>
 					</Link>
 				))}
 			</div>
