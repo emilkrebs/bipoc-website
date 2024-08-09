@@ -4,6 +4,7 @@ import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
 import Collectives from "./components/collectives";
+import Head from "next/head";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
@@ -33,7 +34,7 @@ export default function Home() {
 				<FaqSection />
 
 				<Collectives />
-				
+
 				<Seperator />
 
 				<InstagramPosts />
@@ -59,26 +60,31 @@ export default function Home() {
 
 function LandingSection() {
 	return (
-		<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
+		<>
+			<Head>
+				<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high"  />
+			</Head>
+			<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
 
-			<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
-				<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
-					<div className="flex flex-col items-baseline justify-between w-full text-red-500 md:flex-row text-start">
-						<h1 className="text-2xl font-bold leading-8 sm:text-6xl lg:text-9xl">BIPoC</h1>
-						<h2 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">Climate Justice Summit</h2>
+				<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
+					<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
+						<div className="flex flex-col items-baseline justify-between w-full text-red-500 md:flex-row text-start">
+							<h1 className="text-2xl font-bold leading-8 sm:text-6xl lg:text-9xl">BIPoC</h1>
+							<h2 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">Climate Justice Summit</h2>
+						</div>
+						<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
 					</div>
-					<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
-				</div>
 
-				<div className="flex flex-col items-center justify-center w-full gap-4 p-4">
-					<LinkButton href={registerLink}>Register Now!</LinkButton>
+					<div className="flex flex-col items-center justify-center w-full gap-4 p-4">
+						<LinkButton href={registerLink}>Register Now!</LinkButton>
 
-					<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
-						<Link href="https://docs.google.com/spreadsheets/d/13K626izh8SPU73pMHAUd_dilP_uUZVPrTHFdv_sxCBA/edit?gid=521134214#gid=521134214" className="font-bold text-white hover:underline">View Schedule</Link>
+						<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
+							<Link href="https://docs.google.com/spreadsheets/d/13K626izh8SPU73pMHAUd_dilP_uUZVPrTHFdv_sxCBA/edit?gid=521134214#gid=521134214" className="font-bold text-white hover:underline">View Schedule</Link>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 }
 
@@ -110,6 +116,7 @@ function MapsSection() {
 					<p className="text-base">Wukania Projektehof, 16359 Biesenthal</p>
 				</div>
 				<iframe
+					title="Location GoogleMap"
 					className="w-full h-[26em] lg:h-[42em] rounded-b-lg"
 					loading="lazy"
 					allowFullScreen
@@ -166,7 +173,7 @@ function FaqSection() {
 	return (
 		<section id="faq" className="flex flex-col items-center justify-center w-full">
 			<div className="flex flex-col items-start justify-start w-full p-8 bg-white bg-bottom rounded-lg shadow-lg text-neutral-800">
-			<h2 className="text-4xl font-bold border-b-2 border-black">FAQ</h2>
+				<h2 className="text-4xl font-bold border-b-2 border-black">FAQ</h2>
 				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
 					{faqs.map((faq, index) => (
 						<details className="w-full" key={index} open={faq.open}>

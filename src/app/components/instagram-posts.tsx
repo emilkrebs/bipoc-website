@@ -43,6 +43,7 @@ function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
 			<Image
 				className="object-cover w-full h-full rounded-md"
 				src={src}
+				loading='lazy'
 				alt={alt}
 				width={100}
 				height={100}

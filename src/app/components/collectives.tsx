@@ -72,6 +72,7 @@ export default function Collectives() {
 						<Image
 							className="object-cover size-max"
 							src={collective.src}
+							loading='lazy'
 							alt={collective.title}
 							width={100}
 							height={100}
