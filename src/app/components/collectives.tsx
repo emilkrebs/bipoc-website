@@ -68,10 +68,10 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 
 export default function Collectives() {
 	return (
-		<section id="collectives" className="flex flex-col items-start justify-center w-full gap-8 py-8 text-white">
+		<section id="collectives" className="flex flex-col items-center sm:items-start justify-center w-full gap-8 py-8 text-white">
 			<h2 className="text-4xl font-bold border-b-2 border-black">Collectives</h2>
 
-			<div className="flex flex-wrap items-baseline justify-between w-full gap-8 mt-8 sm:gap-16 h-fit lg:gap-28">
+			<div className="flex flex-wrap items-baseline justify-center sm:justify-between w-full gap-8 mt-8 sm:gap-16 h-fit lg:gap-28">
 				{collectives.map((collective, index) => (
 					<Link key={index} className="transition-transform h-max group w-36 hover:-translate-y-1" href={collective.href} title={collective.title}>
 						<Image
