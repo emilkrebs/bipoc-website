@@ -11,8 +11,6 @@ We warmly invite you to join us at the climate justice summit on September 9th t
 We view climate justice as a broad and inclusive concept that encompasses gender justice, the abolition of prisons and police, and anticolonial struggles. We have a budget to support those providing input and to cover travel expenses.
 
 If you’re part of a collective, an activist, or looking to get involved, we’d love for you to join us! Check out our program and let us know if you’d like to participate.
-
-We hope our invitation interests you and look forward to your [registration](#faq)!
 `;
 
 export default function Home() {
