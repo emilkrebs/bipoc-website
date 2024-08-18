@@ -15,8 +15,6 @@ If you’re part of a collective, an activist, or looking to get involved, we’
 We hope our invitation interests you and look forward to your [registration](#faq)!
 `;
 
-const registerLink = "https://form.jotform.com/241974035690057";
-
 export default function Home() {
 	return (
 		<main className="min-h-screen">
@@ -160,7 +158,7 @@ function FaqSection() {
 		},
 		{
 			question: "How can I register for the summit?",
-			answer: `Please fill out this form: [Click Here](${registerLink}). Early registration is encouraged as spaces are limited. ALL participants can apply for reimbursement of transportation fees, please buy the cheapest ticket and we will reimburse you at the summit with the receipt. Food will be provided free of cost at the venue. `,
+			answer: `Registrations are closed, we've reached our capacity. We received great workshop proposals and people who want to be there! We'll close the registration for now. Thank you so much for registering and supporting us! We'll get back to everyone who registered so far with an infomail in the next couple of days, so stay tuned`,
 			open: true,
 		},
 		{
