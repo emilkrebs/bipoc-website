@@ -4,6 +4,7 @@ import LinkButton from "./components/link-button";
 import InstagramPosts from "./components/instagram-posts";
 import RenderMarkdown from "./components/markdown";
 import Collectives from "./components/collectives";
+import Sponsors from "./components/sponsors";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
@@ -22,7 +23,7 @@ export default function Home() {
 			<AboutSection />
 
 
-			<div className="flex flex-col items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
+			<div className="flex flex-col mb-16 items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
 
 				<MapsSection />
 
@@ -36,16 +37,7 @@ export default function Home() {
 
 				<Seperator />
 
-
-				<div className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
-					<h2 className="text-4xl font-bold">Sponsored by</h2>
-
-					<div className="flex flex-wrap items-baseline justify-center w-full gap-16 p-8 h-fit">
-						<Link className="w-64 h-fit" href="https://www.bewegungsstiftung.de/">
-							<Image className="object-cover size-max" src="/sponsor/bewegungs_stiftung.svg" alt="Bewegungs Stiftung" width={100} height={100} />
-						</Link>
-					</div>
-				</div>
+				<Sponsors />
 
 			</div>
 
