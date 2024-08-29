@@ -59,9 +59,39 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 		rounded: true
 	},
 	{
-		href: "https://iwspace.de/",
-		src: `${imageRoot}/iwspace.webp`,
-		title: "International Women* Space",
+		href: "https://www.instagram.com/conuco_leipzig/",
+		src: `${imageRoot}/conuco_leipzig.webp`,
+		title: "Conuco Leipzig",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/xrnl_rebelsofcolour",
+		src: `${imageRoot}/rebels_of_color.webp`,
+		title: "Rebels of Colour",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/sudanuprisinggermany/",
+		src: `${imageRoot}/sudan_uprising_germany.webp`,
+		title: "SudanUprising Germany",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/roc_awareness",
+		src: `${imageRoot}/roses_of_care.webp`,
+		title: "Roses of Care Awareness",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/quilombooalle/",
+		src: `${imageRoot}/quilombooalle.webp`,
+		title: "Quilombooalle",
+		rounded: true
+	},
+	{
+		href: "https://www.cric-colombia.org/portal/",
+		src: `${imageRoot}/cric_colombia.webp`,
+		title: "Cric Colombia",
 		rounded: true
 	},
 ];
