@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function InstagramPosts() {
 	const posts = [
 		{
-			src: "instagram/registration_closed.webp",
-			alt: "Registration Closed",
-			link: "https://www.instagram.com/p/C-uo6YqIA_f/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+			src: "instagram/registration_open.webp",
+			alt: "Registration Open",
+			link: "https://www.instagram.com/reel/C_bMr8OMTl8/?igsh=MXMwbjN4aDljZTRvdw=="
 		},
 		{
 			src: "instagram/call_to_action.webp",
