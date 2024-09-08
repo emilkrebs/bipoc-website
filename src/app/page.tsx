@@ -65,7 +65,7 @@ function LandingSection() {
 					</div>
 
 					<div className="flex flex-col items-center justify-center w-full gap-4 p-4">
-						<span className="px-4 py-2 text-2xl font-bold text-center text-red-500 bg-black border-2 border-red-500 rounded-lg shadow-lg bg-opacity-90">Registrations Closed</span>
+						<Link href="awareness_concept.pdf" className="px-4 py-2 text-2xl font-bold text-center text-red-500 bg-black border-2 border-red-500 rounded-lg shadow-lg bg-opacity-90">AWARENESS CONCEPT</Link>
 
 						<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
 							<Link href="https://docs.google.com/spreadsheets/d/13K626izh8SPU73pMHAUd_dilP_uUZVPrTHFdv_sxCBA/edit?gid=521134214#gid=521134214" className="font-bold text-white hover:underline">View Schedule</Link>
