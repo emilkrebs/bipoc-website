@@ -1,0 +1,1 @@
+export const CONTACT_EMAIL = "bipoconference2020@riseup.net";

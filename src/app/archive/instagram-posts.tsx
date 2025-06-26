@@ -1,25 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const imagePath = "/archive/2024/instagram";
+
 export default function InstagramPosts() {
 	const posts = [
 		{
-			src: "instagram/registration_open.webp",
+			src: `${imagePath}/registration_open.webp`,
 			alt: "Registration Open",
 			link: "https://www.instagram.com/reel/C_bMr8OMTl8/?igsh=MXMwbjN4aDljZTRvdw=="
 		},
 		{
-			src: "instagram/call_to_action.webp",
+			src: `${imagePath}/call_to_action.webp`,
 			alt: "Call to Action",
 			link: "https://www.instagram.com/p/CzMHEzfsiys/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
-			src: "logo.webp",
+			src: "/archive/2024/logo.webp",
 			alt: "BIPoC Climate Justice Summit",
 			link: "https://www.instagram.com/p/CzEugRRMBhH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
-			src: "instagram/we_are_back.webp",
+			src: `${imagePath}/we_are_back.webp`,
 			alt: "We are back!",
 			link: "https://www.instagram.com/p/C8_8KIXC1bX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		}

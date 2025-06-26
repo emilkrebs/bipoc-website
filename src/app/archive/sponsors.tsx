@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const sponsorPath = "/sponsor";
+const sponsorPath = "/archive/2024/sponsor";
 
 const collectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
@@ -9,7 +9,16 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 		src: `${sponsorPath}/bewegungs_stiftung.svg`,
 		title: "Bewegungs Stiftung"
 	},
-
+	{
+		href: "https://guerrillafoundation.org/",
+		src: `${sponsorPath}/guerrilla.svg`,
+		title: "Guerrilla Foundation"
+	},
+	{
+		href: "https://www.heidehof-stiftung.de/",
+		src: `${sponsorPath}/heidenhof_stiftung.png`,
+		title: "Heidenhof Stiftung"
+	},
 ];
 
 export default function Sponsors() {

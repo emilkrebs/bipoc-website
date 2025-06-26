@@ -1,96 +1,96 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const imageRoot = "/collectives";
+const archiveRoot = "/archive/2024/collectives";
 
-const collectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
+const archiveCollectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
 		href: "https://linktr.ee/back2soilbasics",
-		src: `${imageRoot}/back2soilbasics.webp`,
+		src: `${archiveRoot}/back2soilbasics.webp`,
 		title: "@back2soilbasics"
 	},
 	{
 		href: "https://stichtingaralez.com/",
-		src: `${imageRoot}/aralez.webp`,
+		src: `${archiveRoot}/aralez.webp`,
 		title: "Aralez"
 	},
 	{
 		href: "https://herewedrawtheline.org/",
-		src: `${imageRoot}/herewedrawtheline.svg`,
+		src: `${archiveRoot}/herewedrawtheline.svg`,
 		title: "Here we draw the line"
 	},
 	{
 		href: "https://mamakiya.org/",
-		src: `${imageRoot}/mamakiya.webp`,
+		src: `${archiveRoot}/mamakiya.webp`,
 		title: "Mamakiya"
 	},
 	{
 		href: "https://afrofeminas.com/",
-		src: `${imageRoot}/afrofeminas.webp`,
+		src: `${archiveRoot}/afrofeminas.webp`,
 		title: "Afrofeminas"
 	},
 	{
 		href: "https://www.instagram.com/colectivo.amra/",
-		src: `${imageRoot}/amra.webp`,
+		src: `${archiveRoot}/amra.webp`,
 		title: "AMRA COLLECTIVE"
 	},
 	{
 		href: "https://bewegungsschule.org/",
-		src: `${imageRoot}/bewegungsschule.webp`,
+		src: `${archiveRoot}/bewegungsschule.webp`,
 		title: "Bewegungsschule",
 		rounded: true
 	},
 	{
 		href: "https://www.ataec.com/user/274",
-		src: `${imageRoot}/colectivx.webp`,
+		src: `${archiveRoot}/colectivx.webp`,
 		title: "Colectivx Raíces Negras",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/afrofem.marseille",
-		src: `${imageRoot}/afroqueerfem.webp`,
+		src: `${archiveRoot}/afroqueerfem.webp`,
 		title: "AfroQueerFem",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/collettivo.menen/",
-		src: `${imageRoot}/menen_abegascn.webp`,
+		src: `${archiveRoot}/menen_abegascn.webp`,
 		title: "Collettivo Menen Abegasc",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/conuco_leipzig/",
-		src: `${imageRoot}/conuco_leipzig.webp`,
+		src: `${archiveRoot}/conuco_leipzig.webp`,
 		title: "Conuco Leipzig",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/xrnl_rebelsofcolour",
-		src: `${imageRoot}/rebels_of_color.webp`,
+		src: `${archiveRoot}/rebels_of_color.webp`,
 		title: "Rebels of Colour",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/sudanuprisinggermany/",
-		src: `${imageRoot}/sudan_uprising_germany.webp`,
+		src: `${archiveRoot}/sudan_uprising_germany.webp`,
 		title: "SudanUprising Germany",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/roc_awareness",
-		src: `${imageRoot}/roses_of_care.webp`,
+		src: `${archiveRoot}/roses_of_care.webp`,
 		title: "Roses of Care Awareness",
 		rounded: true
 	},
 	{
 		href: "https://www.instagram.com/quilombooalle/",
-		src: `${imageRoot}/quilombooalle.webp`,
+		src: `${archiveRoot}/quilombooalle.webp`,
 		title: "Quilombooalle",
 		rounded: true
 	},
 	{
 		href: "https://www.cric-colombia.org/portal/",
-		src: `${imageRoot}/cric_colombia.webp`,
+		src: `${archiveRoot}/cric_colombia.webp`,
 		title: "Cric Colombia",
 		rounded: true
 	},
@@ -102,7 +102,7 @@ export default function Collectives() {
 			<h2 className="text-4xl font-bold border-b-2 border-black">Collectives</h2>
 
 			<div className="flex flex-wrap items-baseline justify-center sm:justify-between w-full gap-8 mt-8 sm:gap-16 h-fit lg:gap-28">
-				{collectives.map((collective, index) => (
+				{archiveCollectives.map((collective, index) => (
 					<Link key={index} className="transition-transform h-max group w-36 hover:-translate-y-1" href={collective.href} title={collective.title}>
 						<Image
 							className={`object-cover size-max ${collective.rounded ? "rounded-full" : ""}`}

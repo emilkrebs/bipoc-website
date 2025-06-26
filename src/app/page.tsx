@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import LinkButton from "./components/link-button";
-import InstagramPosts from "./components/instagram-posts";
+import InstagramPosts from "./archive/instagram-posts";
 import RenderMarkdown from "./components/markdown";
-import Collectives from "./components/collectives";
-import Sponsors from "./components/sponsors";
+import Collectives from "./archive/collectives";
+import Sponsors from "./archive/sponsors";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
@@ -13,9 +13,6 @@ We view climate justice as a broad and inclusive concept that encompasses gender
 
 If you’re part of a collective, an activist, or looking to get involved, we’d love for you to join us! Check out our program and let us know if you’d like to participate.
 `;
-
-
-const registerLink = "https://form.jotform.com/241974035690057";
 
 export default function Home() {
 	return (
@@ -31,12 +28,6 @@ export default function Home() {
 				<MapsSection />
 
 				<FaqSection />
-
-				<Collectives />
-
-				<Seperator />
-
-				<InstagramPosts />
 
 				<Seperator />
 
@@ -83,7 +74,7 @@ function AboutSection() {
 	return (
 		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-32">
 			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
-				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/logo.webp" alt="BIPoC Climate Justice Summit" width={100} height={100} />
+				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/poster.png" alt="BIPoC Climate Justice Summit" width={100} height={100} />
 				<div className="flex flex-col items-start justify-start h-full">
 					<h2 className="w-full text-4xl font-bold">Dear BIPoCs of Europe,</h2>
 					<div className="mt-6 text-wrap w-fit">
