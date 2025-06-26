@@ -152,7 +152,7 @@ function FaqSection() {
 		},
 		{
 			question: "How can I register for the summit?",
-			answer: `Registrations are closed, we've reached our capacity. We received great workshop proposals and people who want to be there! We'll close the registration for now. Thank you so much for registering and supporting us! We'll get back to everyone who registered so far with an infomail in the next couple of days, so stay tuned`,
+			answer: "Registrations are closed, we've reached our capacity. We received great workshop proposals and people who want to be there! We'll close the registration for now. Thank you so much for registering and supporting us! We'll get back to everyone who registered so far with an infomail in the next couple of days, so stay tuned",
 			open: true,
 		},
 		{

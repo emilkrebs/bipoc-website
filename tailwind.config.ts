@@ -10,12 +10,6 @@ const config: Config = {
 		fontFamily: {
 			sans: ["Poppins", "sans-serif"],
 		},
-		extend: {
-			animation: {
-				"bounce-slow": "bounce 2s infinite",
-				"shine": "shine 14s linear infinite",
-			},
-		},
 	},
 	plugins: [],
 };

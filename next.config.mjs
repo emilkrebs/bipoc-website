@@ -3,8 +3,8 @@ const nextConfig = {
 	reactStrictMode: true,
 	output: "export",
 	distDir: "out",
-	assetPrefix: "/",
-	optimizeFonts: true,
+	assetPrefix: "./",
+	allowedDevOrigins: ["localhost:3000"],
 	images: {
 		domains: ["github.com"],
 		unoptimized: true,

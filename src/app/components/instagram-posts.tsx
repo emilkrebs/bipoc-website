@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export default function InstagramPosts() {
 	const posts = [
@@ -31,7 +31,7 @@ export default function InstagramPosts() {
 				<Post key={index} src={post.src} alt={post.alt} link={post.link} />
 			))}
 		</section>
-	)
+	);
 }
 
 function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
