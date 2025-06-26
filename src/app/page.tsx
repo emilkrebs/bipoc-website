@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import LinkButton from "./components/link-button";
-import InstagramPosts from "./archive/instagram-posts";
 import RenderMarkdown from "./components/markdown";
-import Collectives from "./archive/collectives";
-import Sponsors from "./archive/sponsors";
+import Sponsors from "./components/sponsors";
 
 const aboutMarkdown = `
 We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
