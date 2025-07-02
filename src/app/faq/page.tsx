@@ -1,5 +1,7 @@
+import LinkButton from "../components/link-button";
 import RenderMarkdown from "../components/markdown";
-import { REGISTRATION_FORM_URL } from "../lib/constants";
+import Image from "next/image";
+import { BIPOC_STATEMENT_TEXT, REGISTRATION_FORM_URL } from "../lib/constants";
 
 export default function FaqPage() {
 	const faqs = [
@@ -55,8 +57,10 @@ In the website section Conference 2025 you can access our programm draft with mo
 	];
 
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed py-16 px-4">
-			<section id="faq" className="flex flex-col items-center w-full">
+		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed">			
+			<Statement />
+			
+			<section id="faq" className="flex flex-col items-center w-full  py-16 px-4">
 				<div className="flex flex-col w-full max-w-4xl p-8 bg-white/90 rounded-2xl shadow-2xl border border-neutral-200">
 					<h2 className="text-4xl font-extrabold text-neutral-900 mb-2 tracking-tight">FAQ</h2>
 					<p className="text-neutral-500 mb-8">Frequently Asked Questions</p>
@@ -106,5 +110,43 @@ In the website section Conference 2025 you can access our programm draft with mo
 				</div>
 			</section>
 		</main>
+	);
+}
+
+function Statement() {
+	return (
+		<section
+			id="statement"
+			className="flex flex-col items-center justify-center w-full px-4 py-12 text-white bg-gradient-to-b from-black/80 via-black/60 to-black/80 shadow-2xl md:px-16"
+		>
+			<div className="flex flex-col items-center justify-between w-full max-w-6xl gap-12 md:flex-row-reverse md:items-start">
+
+				<div className="flex flex-col items-start justify-start w-full max-w-2xl">
+					<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
+						The BI_POC-Statement
+					</h2>
+					<div className="mb-6 text-base leading-relaxed text-left text-white/90 md:text-lg">
+						<RenderMarkdown content={BIPOC_STATEMENT_TEXT} />
+					</div>
+					<div className="flex flex-row gap-4">
+						<LinkButton
+							href={REGISTRATION_FORM_URL}
+						>
+							Register Now!
+						</LinkButton>
+					</div>
+				</div>
+				<div className="flex-shrink-0 w-full overflow-hidden rounded-xl shadow-xl md:max-w-sm">
+					<Image
+						className="object-cover w-full h-full"
+						src="/poster.png"
+						alt="BIPoC Climate Justice Conference Poster"
+						width={400}
+						height={500}
+						priority
+					/>
+				</div>
+			</div>
+		</section>
 	);
 }

@@ -15,14 +15,12 @@ export default function Footer() {
 				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">Contact</Link>
 			</div>
 
-			<p className="mt-4 text-xs">Made with ❤️ by <Link className="hover:underline" href="https://emilkrebs.dev/" target="_blank">Emil Krebs</Link></p>
 		</footer>
 	);
 }
 
 function SocialMediaLinks() {
 	const profiles = [
-		{ name: "X", url: X_URL, icon: "icons/x.svg" },
 		{ name: "Instagram", url: INSTAGRAM_URL, icon: "icons/instagram.svg" },
 		{ name: "YouTube", url: "https://www.youtube.com/channel/UCAU55PiRTlEZwLsSV_zoLsw", icon: "icons/youtube.svg" },
 		{ name: "Facebook", url: "https://www.facebook.com/BIPoCN", icon: "icons/facebook.svg" },

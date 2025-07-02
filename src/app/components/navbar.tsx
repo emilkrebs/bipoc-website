@@ -6,6 +6,7 @@ import { useState } from "react";
 const links = [
 	{ href: "/about", label: "About" },
 	{ href: "/archive", label: "Archive" },
+	{ href: "/conference-2025", label: "Conference 2025" },
 	{ href: "/faq", label: "FAQ" },
 ];
 
@@ -15,7 +16,7 @@ export default function Navbar() {
 	return (
 		<nav className="flex flex-row items-center justify-between w-full gap-2 p-4 text-base text-white bg-neutral-800 relative">
 			<Link href="/" className="font-bold text-pink-500">
-				BIPoC Climate Justice Conferece
+				BIPoC Climate Justice Conference
 			</Link>
 			<div className="flex items-center gap-4">
 				{/* Burger menu button */}
