@@ -18,7 +18,8 @@ Obligations to remove or block the use of information under the general laws rem
 This site contains links to external websites over which we have no control. Therefore we can not accept any responsibility for their content. The respective provider or operator of the pages is always responsible for the contents of any Linked Site. The linked sites were checked at the time of linking for possible violations of law. Illegal contents did not exist at the time of linking. 
 A permanent control of the linked pages is unreasonable without concrete evidence of a violation. Upon notification of violations, we will remove such links immediately.
 
-Resposible for the website architecture and design: Emil Krebs
+This website is community-owned and open-source and is available on [GitHub](https://github.com/emilkrebs/bipoc-website).
+
 `;
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function Imprint() {
 	return (
-		<main className="min-h-screen bg-neutral-900">
+		<main className="min-h-screen bg-neutral-900 text-white">
 			<section className="flex flex-col justify-start items-start gap-2 gap-x-4 w-full h-full p-4">
 				<RenderMarkdown content={markdown} />
 			</section>
