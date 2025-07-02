@@ -26,7 +26,7 @@ export default function Home() {
 			<Statement />
 
 
-			<div className="flex flex-col mb-16 items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
+			<div className="flex flex-col mb-16 items-center justify-between w-full px-2 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
 				
 				<InformationSection />
 				
@@ -100,7 +100,7 @@ function Statement() {
 			className="flex flex-col items-center justify-center w-full px-4 py-12 text-white bg-gradient-to-b from-black/80 via-black/60 to-black/80 shadow-2xl md:px-16"
 		>
 			<div className="flex flex-col items-center justify-between w-full max-w-6xl gap-12 md:flex-row-reverse md:items-start">
-				<div className="flex-shrink-0 w-full max-w-xs overflow-hidden rounded-xl shadow-xl md:max-w-sm">
+				<div className="flex-shrink-0 w-full overflow-hidden rounded-xl shadow-xl md:max-w-sm">
 					<Image
 						className="object-cover w-full h-full"
 						src="/poster.png"
@@ -145,8 +145,8 @@ We do not expect any kind of incident to occur! Besides that, we are planning a 
 To check out the draft please click the link below.`;	
 
 	return (
-		<section className="flex flex-col items-center justify-center w-full py-12 mt-16">
-			<div className="flex flex-col items-start justify-start w-full max-w-6xl bg-black/70 rounded-xl p-8 shadow-2xl">
+		<section className="flex flex-col items-center justify-center w-full py-12 md:mt-16">
+			<div className="flex flex-col items-start justify-start w-full md:max-w-6xl bg-black/70 rounded-xl p-4 md:p-8 shadow-2xl">
 				<h2 className="text-xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
 					Important Information!
 				</h2>
