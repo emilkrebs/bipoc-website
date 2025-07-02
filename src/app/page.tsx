@@ -27,13 +27,6 @@ export default function Home() {
 
 
 			<div className="flex flex-col mb-16 items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
-
-				<MapsSection />
-
-				<FaqSection />
-
-				<Seperator />
-
 				<Sponsors />
 
 			</div>
@@ -78,11 +71,7 @@ function LandingSection() {
 							aria-label="Instagram"
 							className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 hover:bg-white transition shadow-md"
 						>
-							<svg width="22" height="22" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-								<rect width="18" height="18" x="3" y="3" rx="5" stroke="#000" strokeWidth="2" />
-								<circle cx="12" cy="12" r="4" stroke="#000" strokeWidth="2" />
-								<circle cx="17" cy="7" r="1.2" fill="#000" />
-							</svg>
+							<Image src="icons/instagram.svg" alt="Instagram" width={24} height={24} />
 						</Link>
 						<Link
 							href={X_URL}
@@ -91,9 +80,7 @@ function LandingSection() {
 							aria-label="X (Twitter)"
 							className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 hover:bg-white transition shadow-md"
 						>
-							<svg width="22" height="22" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-								<path d="M4 4h4.5l5.5 7.5L19.5 4H22l-7.5 10L22 20h-4.5l-5.5-7.5L4.5 20H2l7.5-10L2 4h2z" fill="#000" />
-							</svg>
+							<Image src="icons/x.svg" alt="X (Twitter)" width={24} height={24} />
 						</Link>
 					</div>
 				</div>
@@ -157,65 +144,6 @@ function MapsSection() {
 					referrerPolicy="no-referrer-when-downgrade"
 					src={embedLink}
 				/>
-			</div>
-		</section>
-	);
-}
-
-
-function FaqSection() {
-	const faqs = [
-		{
-			question: "What is the BIPOC Climate Justice Conferece?",
-			answer: "The BIPOC Only Climate Justice Conferece 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safer space for BIPOC voices, experiences, and leadership in the climate justice movement.",
-			open: true,
-		},
-		{
-			question: "Who can attend the summit?",
-			answer: "The summit is open to all Black, Indigenous, and People of Color (BIPoC) individuals. We welcome activists, scholars, artists, and community members who are interested in climate justice and environmental issues.",
-		},
-		{
-			question: "Why is the summit BIPOC only?",
-			answer: "The summit is BIPOC only to center and prioritize the voices and experiences of communities most affected by climate change and often marginalized in mainstream environmental movements. This exclusive space allows for more open and honest discussions, fostering solidarity and collaborative action among BIPOC individuals.",
-		},
-		{
-			question: "What topics will be covered at the summit?",
-			answer: `The summit will cover a range of topics including:
-- The disproportionate impact of climate change on BIPOC communities.
-- Environmental racism and its effects.
-- Indigenous knowledge and practices in climate resilience.
-- Strategies for community organizing and advocacy.
-- Policy discussions and climate justice initiatives.
-- Intersectionality and the climate movement.
-- Abolitionist perspectives and applications
-- Different forms of activism (art, dance, music, writing)
-- Queering ecologies
-- Practical skill sharing (plant knowledge, media skills, etc.) 
-`,
-		},
-		{
-			question: "How can I register for the summit?",
-			answer: "Registrations are closed, we've reached our capacity. We received great workshop proposals and people who want to be there! We'll close the registration for now. Thank you so much for registering and supporting us! We'll get back to everyone who registered so far with an infomail in the next couple of days, so stay tuned",
-			open: true,
-		},
-		{
-			question: "Is there a virtual attendance option?",
-			answer: "No, we are sorry, we do not have the capacity to offer this.",
-		},
-	];
-
-	return (
-		<section id="faq" className="flex flex-col items-center justify-center w-full">
-			<div className="flex flex-col items-start justify-start w-full p-8 bg-white bg-bottom rounded-lg shadow-lg text-neutral-800">
-				<h2 className="text-4xl font-bold border-b-2 border-black">FAQ</h2>
-				<div className="flex flex-col items-start justify-start w-full gap-4 mt-8">
-					{faqs.map((faq, index) => (
-						<details className="w-full" key={index} open={faq.open}>
-							<summary className="text-lg font-bold cursor-pointer">{faq.question}</summary>
-							<RenderMarkdown content={faq.answer} />
-						</details>
-					))}
-				</div>
 			</div>
 		</section>
 	);
