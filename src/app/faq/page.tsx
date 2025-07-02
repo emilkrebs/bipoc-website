@@ -55,7 +55,7 @@ In the website section Conference 2025 you can access our programm draft with mo
 	];
 
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] py-16 px-4">
+		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed py-16 px-4">
 			<section id="faq" className="flex flex-col items-center w-full">
 				<div className="flex flex-col w-full max-w-2xl p-8 bg-white/90 rounded-2xl shadow-2xl border border-neutral-200">
 					<h2 className="text-4xl font-extrabold text-neutral-900 mb-2 tracking-tight">FAQ</h2>
@@ -84,6 +84,24 @@ In the website section Conference 2025 you can access our programm draft with mo
 								</div>
 							</details>
 						))}
+						<div className="mt-6 mb-2">
+							<h3 className="text-xl font-semibold text-blue-800 flex items-center gap-2">
+								Accessibility: Space &amp; Transport
+							</h3>
+							<p className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+								We are currently finalizing venue details and will update this section with comprehensive accessibility information soon. A prayer room is planned.<br /><br />
+								We aim to collaborate with disability justice groups to organize transportation and accommodations for inclusive participation. If you have accessibility needs, please email us—we want to support you.
+							</p>
+						</div>
+						<div className="mb-2">
+							<h3 className="text-xl font-semibold text-blue-800 flex items-center gap-2">
+								Accessibility: Languages
+							</h3>
+							<p className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+								Our organizing team primarily communicates in English, but German and Spanish speakers are present. Last year’s main conference languages were English and Spanish. All sessions offer simultaneous translation into German, Spanish, and English.<br /><br />
+								If you prefer another language, please contact us early for translation support.
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
