@@ -17,7 +17,7 @@ Welcome to our Archive page! This is a whole new section of our website. In this
 
 export default function ArchivePage() {
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-start gap-4 bg-[url(/background_2.webp)] bg-fixed py-8 px-2 md:px-16 text-white">
+		<main className="min-h-screen flex flex-col items-center justify-start gap-4 bg-[url(/background_2.webp)] bg-fixed py-8 md:py-16 px-2 md:px-16 text-white">
 			<div className="w-full max-w-7xl">
 				
 				<h1 className="text-3xl md:text-5xl font-extrabold text-white mb-8 md:mb-10 tracking-tight text-center drop-shadow-lg">

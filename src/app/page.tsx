@@ -3,7 +3,7 @@ import Image from "next/image";
 import LinkButton from "./components/link-button";
 import RenderMarkdown from "./components/markdown";
 import Sponsors from "./components/sponsors";
-import { AWARENESS_CONCEPT_URL, INSTAGRAM_URL, REGISTRATION_FORM_URL, X_URL } from "./lib/constants";
+import { AWARENESS_CONCEPT_URL, INSTAGRAM_URL, PROGRAM_URL, REGISTRATION_FORM_URL, X_URL } from "./lib/constants";
 
 const bipocStatement = `
 While BIPoC (Black, Indigenous and People of Color) signals a shared experience, and thus identity, it fails to highlight the complexity of experiences, perspectives, identities, histories, dreams, visions and magic each of us hold within us; despite this, we have made the decision to continue using it in this year's call to gather. 
@@ -27,6 +27,9 @@ export default function Home() {
 
 
 			<div className="flex flex-col mb-16 items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
+				
+				<InformationSection />
+				
 				<Sponsors />
 
 			</div>
@@ -40,7 +43,7 @@ function LandingSection() {
 		<>
 			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high" />
 
-			<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
+			<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed bg-cover min-h-screen size-full">
 				<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 					<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
 						<div className="flex flex-col items-baseline justify-between w-full text-red-500 md:flex-row text-start">
@@ -50,10 +53,11 @@ function LandingSection() {
 					</div>
 					<div className="flex flex-row items-center justify-center gap-4">
 						<Link
-							href="#statement"
+							href={PROGRAM_URL}
+							target="_blank"
 							className="px-5 py-2 rounded-full mt-6 bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
 						>
-							Read Statement
+							View Programm
 						</Link>
 						<Link
 							href={AWARENESS_CONCEPT_URL}
@@ -127,23 +131,49 @@ function Statement() {
 }
 
 
-function MapsSection() {
-	const embedLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40776.05832649755!2d13.606351548780625!3d52.76431636004535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a9b1de8298ed33%3A0xa84fe45f464a4778!2sWukania%20Projektehof!5e0!3m2!1sen!2sde!4v1722519400038!5m2!1sen!2sd";
+function InformationSection() {
+	const locationText = `This year we will be located in Basque Country in **Northern Spain** about an hour away from Bilbao. We are teaming up with a beautiful venue in a rural area. Due to security precautions, we will not share the explicit location of the venue on the website.  
+
+Once the registrations are approved, we will share all relevant details with attendees and contributors.
+
+This decision is informed mostly by wanting to be extra careful in an area that most of the core organizing team is not very familiar with.  
+We do not expect any kind of incident to occur! Besides that, we are planning a safety strategy for transport to and from the venue.
+	`;
+
+	const programText = `Also this year we curated a wonderful programm, which is still waiting on your contribution. Get creative and submit whatever you like. We came up with a rough drafted of how we envision the sessions and timing. This is not a limitation but an inspiration! Any suggestion is welcome. We will do our best to fit it into this years curation. 
+
+To check out the draft please click the link below.`;	
+
 	return (
-		<section id="location" className="flex flex-col items-center justify-center w-full mt-32 text-neutral-800">
-			<div className="w-full bg-white rounded-lg shadow-lg">
-				<div className="flex flex-col items-baseline justify-center w-full gap-2 p-4 sm:flex-row">
-					<h2 className="text-4xl font-bold">Location</h2>
-					<p className="text-base">Wukania Projektehof, 16359 Biesenthal</p>
+		<section className="flex flex-col items-center justify-center w-full py-12 mt-16">
+			<div className="flex flex-col items-start justify-start w-full max-w-6xl bg-black/70 rounded-xl p-8 shadow-2xl">
+				<h2 className="text-xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
+					Important Information!
+				</h2>
+				<p className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
+					Everything you need to know at a glance. If you have any questions, please check the <Link href="/faq" className="text-pink-500 hover:underline">FAQ</Link>.
+				</p>
+				<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+					Location
+				</h3>
+				<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+					<RenderMarkdown content={locationText} />
 				</div>
-				<iframe
-					title="Location GoogleMap"
-					className="w-full h-[26em] lg:h-[42em] rounded-b-lg"
-					loading="lazy"
-					allowFullScreen
-					referrerPolicy="no-referrer-when-downgrade"
-					src={embedLink}
-				/>
+
+				<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+					Programm/ Schedule
+				</h3>
+				<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+					<RenderMarkdown content={programText} />
+				</div>
+				<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+					<LinkButton
+						href={PROGRAM_URL}
+						target="_blank"
+					>
+						View Programm
+					</LinkButton>
+				</div>
 			</div>
 		</section>
 	);

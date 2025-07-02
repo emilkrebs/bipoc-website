@@ -16,7 +16,7 @@ Our conference is not open to white people.
 
 If reading this activated you in any kind of way, we want to remind you to welcome these feelings or thoughts and not push them away. We don't ask anybody to defend themselves. This is an invitation to reflect and learn, so that we can welcome one another into the space with a full heart. 
 
-An offering in this moment can be the following information source: https://www.queensjournal.ca/recognizing-being-white-passing-as-a-privilege/
+An offering in this moment can be the following information source: [Recognizing being white-passing as a privilege](https://www.queensjournal.ca/recognizing-being-white-passing-as-a-privilege/)
 `,
 		},
 		{
@@ -27,7 +27,7 @@ We encourage all affinity spaces to bring their reflections back to plenum as an
 
 If you already want to suggest an affinity space we welcome you to get in touch with us. 
 
-For a deeper dive into affinity spaces: https://sisumagazine.com/blogs/issue-7-lawful-bodies/the-power-of-affinity-spaces
+For a deeper dive into affinity spaces: [The Power of Affinity Spaces](https://sisumagazine.com/blogs/issue-7-lawful-bodies/the-power-of-affinity-spaces)
 `,
 		},
 		{
@@ -44,7 +44,7 @@ In the website section Conference 2025 you can access our programm draft with mo
 		{
 			question: "How can I register for the summit?",
 			answer: `The registrations will open soon. Registrations are available following this link:
-            ${REGISTRATION_FORM_URL}
+[Registration Form](${REGISTRATION_FORM_URL})
 `,
 			open: true,
 		},
@@ -57,7 +57,7 @@ In the website section Conference 2025 you can access our programm draft with mo
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed py-16 px-4">
 			<section id="faq" className="flex flex-col items-center w-full">
-				<div className="flex flex-col w-full max-w-2xl p-8 bg-white/90 rounded-2xl shadow-2xl border border-neutral-200">
+				<div className="flex flex-col w-full max-w-4xl p-8 bg-white/90 rounded-2xl shadow-2xl border border-neutral-200">
 					<h2 className="text-4xl font-extrabold text-neutral-900 mb-2 tracking-tight">FAQ</h2>
 					<p className="text-neutral-500 mb-8">Frequently Asked Questions</p>
 					<div className="flex flex-col w-full gap-4">
