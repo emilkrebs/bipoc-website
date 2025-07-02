@@ -5,14 +5,14 @@ import Navbar from "./components/navbar";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://bipoclimatejusticenetwork.org/"),
-	title: "BIPoC Climate Justice Conferece 2024 | Register Now!",
-	description: "Join us at the BIPoC Climate Justice Conferece on Sept 9-13. Registrations are open!",
+	title: "BIPoC Climate Justice Conferece 2025 | Register Now!",
+	description: "Join us at the BIPoC Climate Justice Conferece on Sept 11-15. Registrations are open!",
 	creator: "Emil Krebs",
 	robots: "follow, index",
 	openGraph: {
 		type: "website",
-		title: "BIPoC Climate Justice Conferece 2024 | Register Now!",
-		description: "Join us at the BIPoC Climate Justice Conferece on Sept 9-13. Registrations are open!",
+		title: "BIPoC Climate Justice Conferece 2025 | Register Now!",
+		description: "Join us at the BIPoC Climate Justice Conferece on Sept 11-15. Registrations are open!",
 		images: [
 			{
 				url: "/opengraph.webp",
