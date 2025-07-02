@@ -1,6 +1,6 @@
 # About
 
-This is the source code for the official website of the **BIPoC Climate Justice Summit 2024**.
+This is the source code for the official website of the **BIPoC Climate Justice Conferece 2024**.
 
 # How to setup
 

@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { HTMLProps } from "react";
 
-export default function LinkButton(props: HTMLProps<HTMLAnchorElement>) {
-	const classes = "px-4 py-2 text-2xl font-bold text-center text-red-500 bg-black border-2 border-red-500 rounded-lg shadow-lg bg-opacity-90 transition-transform hover:-translate-y-0.5";
+export default function LinkButton({
+	href = "/",
+	className = "",
+	children,
+	...rest
+}: HTMLProps<HTMLAnchorElement>) {
+	const baseClasses =
+		"inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-white bg-gradient-to-r from-red-500 to-pink-500 shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 transition-all duration-200 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-red-500 hover:to-pink-500";
 	return (
-		<Link href={props.href || "/"} className={`${classes} ${props.className || ""}`}>
-			{props.children}
+		<Link
+			href={href}
+			className={`${baseClasses} ${className}`}
+			{...rest}
+		>
+			{children}
 		</Link>
 	);
 }

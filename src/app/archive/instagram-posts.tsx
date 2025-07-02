@@ -17,7 +17,7 @@ export default function InstagramPosts() {
 		},
 		{
 			src: "/archive/2024/logo.webp",
-			alt: "BIPoC Climate Justice Summit",
+			alt: "BIPoC Climate Justice Conferece",
 			link: "https://www.instagram.com/p/CzEugRRMBhH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
 		},
 		{
@@ -39,7 +39,7 @@ export default function InstagramPosts() {
 function Post({ src, alt, link }: { src: string, alt: string, link: string }) {
 	return (
 		<Link href={link} target="_blank" className="relative w-full rounded-md shadow-2xl cursor-pointer md:w-80">
-			<p className="absolute flex items-center justify-center w-full h-full transition-opacity bg-black rounded-md opacity-0 hover:bg-opacity-45 hover:opacity-100">
+			<p className="absolute flex items-center justify-center w-full h-full transition-all bg-black rounded-md opacity-0 hover:opacity-100 hover:bg-black/40 ">
 				View Post
 			</p>
 			<Image

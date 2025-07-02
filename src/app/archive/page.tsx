@@ -21,9 +21,11 @@ Welcome to our Archive page! This is a whole new section of our website. In this
 
 export default function ArchivePage() {
 	return (
-		<main className="min-h-screen flex flex-col items-center justify-start gap-4 bg-[url(/background.webp)] bg-fixed py-16 px-4 md:px-16  text-white ">
+		<main className="min-h-screen flex flex-col items-center justify-start gap-4 bg-[url(/background_2.webp)] bg-fixed py-16 px-4 md:px-16  text-white">
 
-			<h1 className="text-4xl font-bold mb-8">Archive 2024</h1>
+			<h1 className="text-5xl font-extrabold text-white mb-10 tracking-tight text-center drop-shadow-lg">
+				Archive 2024
+			</h1>
 
 
 			<div className="flex-1 text-white scale-110 whitespace-pre-line w-4xl">

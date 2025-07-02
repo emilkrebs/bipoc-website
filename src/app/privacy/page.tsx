@@ -32,7 +32,7 @@ If you have any questions about this privacy policy, please get in touch with us
 `;
 
 export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Summit 2024 | Privacy Policy",
+	title: "BIPoC Climate Justice Conferece 2024 | Privacy Policy",
 };
 
 export default function Privacy() {

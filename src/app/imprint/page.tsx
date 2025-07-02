@@ -4,7 +4,7 @@ import RenderMarkdown from "../components/markdown";
 const markdown = `
 # Imprint
 
-BIPoC Climate Justice Summit
+BIPoC Climate Justice Conferece
 
 E-Mail: [bipoconference2020@riseup.net](mailto:bipoconference2020@riseup.net)
 
@@ -22,7 +22,7 @@ Resposible for the website architecture and design: Emil Krebs
 `;
 
 export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Summit 2024 | Imprint",
+	title: "BIPoC Climate Justice Conferece 2024 | Imprint",
 };
 
 export default function Imprint() {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { INSTAGRAM_URL, X_URL } from "../lib/constants";
 
 export default function Footer() {
 	return (
@@ -21,8 +22,8 @@ export default function Footer() {
 
 function SocialMediaLinks() {
 	const profiles = [
-		{ name: "X", url: "https://x.com/BipocN", icon: "icons/x.svg" },
-		{ name: "Instagram", url: "https://www.instagram.com/bipoc_climate_justice_network/", icon: "icons/instagram.svg" },
+		{ name: "X", url: X_URL, icon: "icons/x.svg" },
+		{ name: "Instagram", url: INSTAGRAM_URL, icon: "icons/instagram.svg" },
 		{ name: "YouTube", url: "https://www.youtube.com/channel/UCAU55PiRTlEZwLsSV_zoLsw", icon: "icons/youtube.svg" },
 		{ name: "Facebook", url: "https://www.facebook.com/BIPoCN", icon: "icons/facebook.svg" },
 

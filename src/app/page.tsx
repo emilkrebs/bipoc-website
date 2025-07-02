@@ -3,13 +3,18 @@ import Image from "next/image";
 import LinkButton from "./components/link-button";
 import RenderMarkdown from "./components/markdown";
 import Sponsors from "./components/sponsors";
+import { AWARENESS_CONCEPT_URL, INSTAGRAM_URL, REGISTRATION_FORM_URL, X_URL } from "./lib/constants";
 
-const aboutMarkdown = `
-We warmly invite you to join us at the climate justice summit on September 9th to 13th. We are a collective of BIPoC individuals from all over Germany, eager to connect with different groups and initiatives to build alliances and strengthen our community. Our members are active in various collectives, including mainstream climate justice movements and BIPoC-only groups. In 2020, we organized an online conference due to the pandemic, but now we’re excited to gather in person!
+const bipocStatement = `
+While BIPoC (Black, Indigenous and People of Color) signals a shared experience, and thus identity, it fails to highlight the complexity of experiences, perspectives, identities, histories, dreams, visions and magic each of us hold within us; despite this, we have made the decision to continue using it in this year's call to gather. 
+This call is an invitation to all who hold a shared experience of being oppressed, marginalized and/or limited by systems of racism, and with that, capitalism and colonialism. It is a call to dream into new systems that nourish and care for collective well-being, and visualize our paths toward making our visions a reality. 
 
-We view climate justice as a broad and inclusive concept that encompasses gender justice, the abolition of prisons and police, and anticolonial struggles. We have a budget to support those providing input and to cover travel expenses.
+It is our wish to organize a conference that is rooted, at its core, in a shared political grounding that is anti-colonial, anti-racist, anti-imperialist and anti-capitalist. We want to centre the visions of those most affected by multiple forms of oppression simulatenously: trans-hostility, -phobia and other LGBTQIA+-phobias, ableism, colorism, racial capitalism, white supremacy, cis-hetero-patriarchy. During our conference, we will prioritise these siblings in our decisions for workshop facilitators and session hosts. We also actively encourage the hosting of radical affinity spaces as additions to the conference program. 
 
-If you’re part of a collective, an activist, or looking to get involved, we’d love for you to join us! Check out our program and let us know if you’d like to participate.
+Liberatory work needs all of us acting with collecive care and reciprocity.
+
+Please make sure to read the FAQ before attending.
+We are so excited to hold this space with you! <3 
 `;
 
 export default function Home() {
@@ -18,7 +23,7 @@ export default function Home() {
 
 			<LandingSection />
 
-			<AboutSection />
+			<Statement />
 
 
 			<div className="flex flex-col mb-16 items-center justify-between w-full px-8 pb-16 bg-fixed bg-top bg-cover md:px-32 gap-y-32 bg-[url(/background_2.webp)]">
@@ -40,45 +45,94 @@ export default function Home() {
 function LandingSection() {
 	return (
 		<>
-			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high"  />
+			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high" />
 
 			<section className="flex flex-col items-center justify-center bg-[url(/background.webp)] bg-fixed min-h-screen size-full">
-
 				<div className="flex flex-col items-center justify-center h-screen gap-4 mb-16 md:gap-8 w-fit">
 					<div className="flex flex-col items-center justify-center gap-2 md:items-start md:gap-4">
 						<div className="flex flex-col items-baseline justify-between w-full text-red-500 md:flex-row text-start">
-							<h1 className="text-2xl font-bold leading-8 sm:text-6xl lg:text-9xl">BIPoC</h1>
-							<h2 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">Climate Justice Summit</h2>
+							<h1 className="text-xl md:font-bold sm:text-2xl lg:text-4xl">BIPoC Climate Justice Conference</h1>
 						</div>
-						<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">09.09 - 13.09.2024</span>
+						<span className="w-full px-2 py-0 text-4xl font-bold text-center text-white shadow-lg sm:text-5xl md:text-7xl lg:text-8xl bg-shine">11.09 - 15.09.2025</span>
 					</div>
-
-					<div className="flex flex-col items-center justify-center w-full gap-4 p-4">
-						<Link href="awareness_concept.pdf" className="px-4 py-2 text-2xl font-bold text-center text-red-500 bg-black border-2 border-red-500 rounded-lg shadow-lg bg-opacity-90">AWARENESS CONCEPT</Link>
-						<Link href="https://drive.google.com/drive/folders/1t9rN2d3C2osvYkYvTDzDMp-v_EhfoPZF" className="px-4 py-2 text-2xl font-bold text-center text-red-500 bg-black border-2 border-red-500 rounded-lg shadow-lg bg-opacity-90">All Documents</Link>
-
-						<div className="flex flex-row items-center justify-center gap-2 px-1 mt-2 bg-black bg-opacity-75 rounded-md">
-							<Link href="https://docs.google.com/spreadsheets/d/13K626izh8SPU73pMHAUd_dilP_uUZVPrTHFdv_sxCBA/edit?gid=521134214#gid=521134214" className="font-bold text-white hover:underline">View Schedule</Link>
-						</div>
+					<div className="flex flex-row items-center justify-center gap-4">
+						<Link
+							href="#statement"
+							className="px-5 py-2 rounded-full mt-6 bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
+						>
+							Read Statement
+						</Link>
+						<Link
+							href={AWARENESS_CONCEPT_URL}
+							target="_blank"
+							className="px-5 py-2 rounded-full mt-6 bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
+						>
+							Awareness Concept
+						</Link>
+					</div>
+					<div className="flex flex-row items-center justify-center gap-4">
+						<Link
+							href={INSTAGRAM_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Instagram"
+							className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 hover:bg-white transition shadow-md"
+						>
+							<svg width="22" height="22" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+								<rect width="18" height="18" x="3" y="3" rx="5" stroke="#000" strokeWidth="2" />
+								<circle cx="12" cy="12" r="4" stroke="#000" strokeWidth="2" />
+								<circle cx="17" cy="7" r="1.2" fill="#000" />
+							</svg>
+						</Link>
+						<Link
+							href={X_URL}
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="X (Twitter)"
+							className="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 hover:bg-white transition shadow-md"
+						>
+							<svg width="22" height="22" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+								<path d="M4 4h4.5l5.5 7.5L19.5 4H22l-7.5 10L22 20h-4.5l-5.5-7.5L4.5 20H2l7.5-10L2 4h2z" fill="#000" />
+							</svg>
+						</Link>
 					</div>
 				</div>
-			</section>
+			</section >
 		</>
 	);
 }
 
-// TODO: Rewrite text
-function AboutSection() {
+function Statement() {
 	return (
-		<section id="about" className="flex flex-col items-center justify-center w-full p-8 text-white shadow-lg md:px-32">
-			<div className="flex flex-col-reverse items-start justify-between w-full gap-16 py-8 xl:flex-row">
-				<Image className="rounded-lg shadow-lg w-max xl:size-96" src="/poster.png" alt="BIPoC Climate Justice Summit" width={100} height={100} />
-				<div className="flex flex-col items-start justify-start h-full">
-					<h2 className="w-full text-4xl font-bold">Dear BIPoCs of Europe,</h2>
-					<div className="mt-6 text-wrap w-fit">
-						<RenderMarkdown content={aboutMarkdown} />
+		<section
+			id="statement"
+			className="flex flex-col items-center justify-center w-full px-4 py-12 text-white bg-gradient-to-b from-black/80 via-black/60 to-black/80 shadow-2xl md:px-16"
+		>
+			<div className="flex flex-col items-center justify-between w-full max-w-6xl gap-12 md:flex-row-reverse md:items-start">
+				<div className="flex-shrink-0 w-full max-w-xs overflow-hidden rounded-xl shadow-xl md:max-w-sm">
+					<Image
+						className="object-cover w-full h-full"
+						src="/poster.png"
+						alt="BIPoC Climate Justice Conference Poster"
+						width={400}
+						height={500}
+						priority
+					/>
+				</div>
+				<div className="flex flex-col items-start justify-start w-full max-w-2xl">
+					<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
+						The BiPoC-Statement
+					</h2>
+					<div className="mb-6 text-base leading-relaxed text-left text-white/90 md:text-lg">
+						<RenderMarkdown content={bipocStatement} />
 					</div>
-					<LinkButton className="mt-5" href="https://cryptpad.fr/pad/#/2/pad/edit/ToSKZSbnvFEpt+AfYvNt9bpP/">View Program</LinkButton>
+					<div className="flex flex-row gap-4">
+						<LinkButton
+							href={REGISTRATION_FORM_URL}
+						>
+							Register Now!
+						</LinkButton>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -112,8 +166,8 @@ function MapsSection() {
 function FaqSection() {
 	const faqs = [
 		{
-			question: "What is the BIPOC Climate Justice Summit?",
-			answer: "The BIPOC Only Climate Justice Summit 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safer space for BIPOC voices, experiences, and leadership in the climate justice movement.",
+			question: "What is the BIPOC Climate Justice Conferece?",
+			answer: "The BIPOC Only Climate Justice Conferece 2024 is a dedicated event that brings together Black, Indigenous, and People of Color to discuss and address the unique impacts of climate change on BIPOC communities. The summit aims to create a safer space for BIPOC voices, experiences, and leadership in the climate justice movement.",
 			open: true,
 		},
 		{
