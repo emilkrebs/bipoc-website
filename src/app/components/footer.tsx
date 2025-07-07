@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { INSTAGRAM_URL, X_URL } from "../lib/constants";
+import { INSTAGRAM_URL } from "../lib/constants";
 
 export default function Footer() {
 	return (

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import LinkButton from "../components/link-button";
 import RenderMarkdown from "../components/markdown";
-import { PROGRAM_URL } from "../lib/constants";
+import { AWARENESS_CONCEPT_URL, CONTACT_EMAIL, PROGRAM_URL, REGISTRATION_FORM_URL } from "../lib/constants";
 import Sponsors from "./sponsors";
 
 export default function InformationPage() {
 	const registrationText = `The registrations are open! If you would like to join us as a parcitipatant or contribute to this years program, please click the link below.
-
-[Registration Form](https://form.jotform.com/251596678433066)`;
+`;
 
 	const locationText = `This year we will be located in Basque Country in **Northern Spain** about an hour away from Bilbao. We are teaming up with a beautiful venue in a rural area. Due to security precautions, we will not share the explicit location of the venue on the website.  
 
@@ -21,6 +20,7 @@ We do not expect any kind of incident to occur! Besides that, we are planning a 
 
 To check out the draft please click the link below.`;
 
+	const awarenessConceptText = "Awareness is a collective effort for all our wellbeing. Click on the link below to access our awareness concept and code of conduct for our shared time. ";
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center w-full bg-[url(/background_2.webp)] bg-fixed py-12 px-2 md:px-16">
 			<section className="flex flex-col items-center justify-center w-full">
@@ -29,7 +29,7 @@ To check out the draft please click the link below.`;
 						Conference 2025
 					</h2>
 					<p className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
-						Everything you need to know at a glance. If you have any questions, please check the <Link href="/faq" className="text-pink-500 hover:underline">FAQ</Link>.
+						Everything you need to know at a glance. If you have any questions, please check the <Link href="/faq#faq" className="text-pink-500 hover:underline">FAQ</Link> or write us an <Link href={`mailto:${CONTACT_EMAIL}`} className="text-pink-500 hover:underline">email</Link>.
 					</p>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
@@ -37,6 +37,12 @@ To check out the draft please click the link below.`;
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={registrationText} />
+						<LinkButton
+							href={REGISTRATION_FORM_URL}
+							target="_blank"
+						>
+							Registration Form
+						</LinkButton>
 					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
@@ -51,8 +57,6 @@ To check out the draft please click the link below.`;
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={programText} />
-					</div>
-					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<LinkButton
 							href={PROGRAM_URL}
 							target="_blank"
@@ -60,10 +64,22 @@ To check out the draft please click the link below.`;
 							View Programm
 						</LinkButton>
 					</div>
+
+					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+						Awareness Concept
+					</h3>
+					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+						<RenderMarkdown content={awarenessConceptText} />
+						<LinkButton
+							href={AWARENESS_CONCEPT_URL}
+							target="_blank"
+						>
+							Awareness Concept PDF
+						</LinkButton>
+					</div>
+
 				</div>
-
 				<Sponsors />
-
 			</section>
 		</main>
 	);

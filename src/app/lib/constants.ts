@@ -1,12 +1,12 @@
 export const CONTACT_EMAIL = "bipoconference2020@riseup.net";
 export const REGISTRATION_FORM_URL = "https://form.jotform.com/251596678433066";
-export const PROGRAM_URL = "/program";
+export const PROGRAM_URL = "https://drive.proton.me/urls/GNAJZTQFJW#B2bPY7cznL9t";
 export const AWARENESS_CONCEPT_URL = "/awareness_concept.pdf";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/bipoc_climate_justice_network//";
 export const X_URL = "https://x.com/BipocN";
 
-
+// TODO: Update statement
 export const BIPOC_STATEMENT_TEXT = `
 While BIPoC (Black, Indigenous and People of Color) signals a shared experience, and thus identity, it fails to highlight the complexity of experiences, perspectives, identities, histories, dreams, visions and magic each of us hold within us; despite this, we have made the decision to continue using it in this year's call to gather. 
 This call is an invitation to all who hold a shared experience of being oppressed, marginalized and/or limited by systems of racism, and with that, capitalism and colonialism. It is a call to dream into new systems that nourish and care for collective well-being, and visualize our paths toward making our visions a reality. 
