@@ -1,7 +1,3 @@
-import { Metadata } from "next";
-import RenderMarkdown from "../components/markdown";
-
-const markdown = `
 # Imprint
 
 BIPoC Climate Justice Conferece
@@ -19,19 +15,3 @@ This site contains links to external websites over which we have no control. The
 A permanent control of the linked pages is unreasonable without concrete evidence of a violation. Upon notification of violations, we will remove such links immediately.
 
 This website is community-owned and open-source and is available on [GitHub](https://github.com/emilkrebs/bipoc-website).
-
-`;
-
-export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Conferece 2024 | Imprint",
-};
-
-export default function Imprint() {
-	return (
-		<main className="min-h-screen bg-neutral-900 text-white">
-			<section className="flex flex-col justify-start items-start gap-2 gap-x-4 w-full h-full p-4">
-				<RenderMarkdown content={markdown} />
-			</section>
-		</main>
-	);
-}

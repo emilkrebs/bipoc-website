@@ -1,7 +1,3 @@
-import { Metadata } from "next";
-import RenderMarkdown from "../components/markdown";
-
-const markdown = `
 # Privacy Policy
 
 ## What information do we collect?
@@ -31,19 +27,3 @@ We reserve the right to update this privacy policy at any time. We will notify y
 If you have any questions about this privacy policy, please get in touch with us at [bipoconference2020@riseup.net](mailto:bipoconference2020@riseup.net).
 
 This website is community-owned and open-source and is available on [GitHub](https://github.com/emilkrebs/bipoc-website).
-
-`;
-
-export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Conferece 2024 | Privacy Policy",
-};
-
-export default function Privacy() {
-	return (
-		<main className="min-h-screen bg-neutral-900 text-white">
-			<section className="flex flex-col justify-start items-start gap-2 gap-x-4 w-full h-full p-4">
-				<RenderMarkdown content={markdown} />
-			</section>
-		</main>
-	);
-}

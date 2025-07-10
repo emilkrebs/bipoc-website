@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://bipoclimatejusticenetwork.org/"),
@@ -24,18 +22,15 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+
 	return (
-		<html lang="en">
-			<body>
-				<Navbar />
-				{children}
-				<Footer />
-			</body>
-		</html>
+		<>
+			{children}
+		</>
 	);
 }
