@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
-
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://bipoclimatejusticenetwork.org/"),
@@ -32,10 +29,8 @@ export default async function RootLayout({
 }>) {
 
 	return (
-		<html>
-			<body>
-				{children}
-			</body>
-		</html>
+		<>
+			{children}
+		</>
 	);
 }

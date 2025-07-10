@@ -45,6 +45,10 @@ export default async function FaqPage({ params }: LocaleProps) {
 		}
 	];
 
+	// Load accessibility sections
+	const accessibilitySpace = await getTextData("faq/accessibility-space", locale);
+	const accessibilityLanguages = await getTextData("faq/accessibility-languages", locale);
+
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed">			
 			<Statement />
@@ -79,21 +83,19 @@ export default async function FaqPage({ params }: LocaleProps) {
 						))}
 						<div className="mt-6 mb-2">
 							<h3 className="text-xl font-semibold text-blue-800 flex items-center gap-2">
-								Accessibility: Space &amp; Transport
+								{accessibilitySpace.title}
 							</h3>
-							<p className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
-								We are currently finalizing venue details and will update this section with comprehensive accessibility information soon. A prayer room is planned.<br /><br />
-								We aim to collaborate with disability justice groups to organize transportation and accommodations for inclusive participation. If you have accessibility needs, please email us—we want to support you.
-							</p>
+							<div className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+								<RenderMarkdown content={accessibilitySpace.content} />
+							</div>
 						</div>
 						<div className="mb-2">
 							<h3 className="text-xl font-semibold text-blue-800 flex items-center gap-2">
-								Accessibility: Languages
+								{accessibilityLanguages.title}
 							</h3>
-							<p className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
-								Our organizing team primarily communicates in English, but German and Spanish speakers are present. Last year’s main conference languages were English and Spanish. All sessions offer simultaneous translation into German, Spanish, and English.<br /><br />
-								If you prefer another language, please contact us early for translation support.
-							</p>
+							<div className="text-neutral-700 mt-2 mb-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+								<RenderMarkdown content={accessibilityLanguages.content} />
+							</div>
 						</div>
 					</div>
 				</div>

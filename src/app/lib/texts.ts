@@ -1,12 +1,13 @@
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";
-import { TEXTS_DIRECTORY, REGISTRATION_FORM_URL } from "./constants";
+import { TEXTS_DIRECTORY } from "./constants";
 
 export interface Text {
 	id: string;
-	title?: string;
 	content: string;
+
+	[key: string]: any;
 }
 
 
@@ -33,7 +34,6 @@ export function createTextFromFile(fileName: string, directory: string): Text {
 	const object = {
 		id,
 		...markdown.data,
-		title: markdown.data.title,
 		content: markdown.content
 	};
 
@@ -63,22 +63,12 @@ export async function getTextsData(locale: string = "en") {
 export async function getTextData(id: string, locale: string = "en") {
 	try {
 		// Try to load the file for the requested locale
-		const text = createTextFromFile(`${id}.md`, path.join(TEXTS_DIRECTORY, locale));
-		
-		// Replace placeholders with actual URLs
-		text.content = text.content.replace(/REGISTRATION_FORM_URL/g, REGISTRATION_FORM_URL);
-		
-		return text;
+		return createTextFromFile(`${id}.md`, path.join(TEXTS_DIRECTORY, locale));
 	} catch (error) {
 		// Fallback to English if the locale file doesn't exist
 		if (locale !== "en") {
 			console.warn(`Text file for ${id} not found in locale ${locale}, falling back to English`);
-			const fallbackText = createTextFromFile(`${id}.md`, path.join(TEXTS_DIRECTORY, "en"));
-			
-			// Replace placeholders with actual URLs
-			fallbackText.content = fallbackText.content.replace(/REGISTRATION_FORM_URL/g, REGISTRATION_FORM_URL);
-			
-			return fallbackText;
+			return createTextFromFile(`${id}.md`, path.join(TEXTS_DIRECTORY, "en"));
 		}
 		// If English file also doesn't exist, throw the error
 		throw error;
