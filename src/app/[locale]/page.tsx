@@ -4,6 +4,12 @@ import Link from "next/link";
 import { getTextData } from "../lib/texts";
 import RenderMarkdown from "../components/markdown";
 import { LocaleProps } from "./layout";
+import { locales } from "../lib/localisation";
+
+// Generate static params for all locales
+export async function generateStaticParams() {
+	return locales.map((locale) => ({ locale }));
+}
 
 interface LandingSectionProps {
 	welcomeText: string;

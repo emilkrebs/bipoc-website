@@ -2,6 +2,12 @@ import RenderMarkdown from "@/app/components/markdown";
 import { Metadata } from "next";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
+import { locales } from "@/app/lib/localisation";
+
+// Generate static params for all locales
+export async function generateStaticParams() {
+	return locales.map((locale) => ({ locale }));
+}
 
 export const metadata: Metadata = {
 	title: "BIPoC Climate Justice Conferece 2024 | Imprint",

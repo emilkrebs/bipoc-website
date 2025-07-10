@@ -4,6 +4,12 @@ import { REGISTRATION_FORM_URL } from "@/app/lib/constants";
 import Image from "next/image";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
+import { locales } from "@/app/lib/localisation";
+
+// Generate static params for all locales
+export async function generateStaticParams() {
+	return locales.map((locale) => ({ locale }));
+}
 
 export default async function FaqPage({ params }: LocaleProps) {
 	const { locale } = await params;

@@ -4,6 +4,12 @@ import { REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app
 import Sponsors from "./sponsors";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
+import { locales } from "@/app/lib/localisation";
+
+// Generate static params for all locales
+export async function generateStaticParams() {
+	return locales.map((locale) => ({ locale }));
+}
 
 const pagePath = "conference-2025";
 

@@ -58,6 +58,8 @@ Take a look at the markdown cheatsheet for more formatting options: [Markdown Ch
 - **Use simple markdown formatting**: `**bold**`, `*italic*`, `[link text](url)`
 - **Test your changes** by running the website locally (see developer section below)
 
+If data or content is missing, the website will fall back to the English version automatically.
+
 ## 🛠️ Developer Setup
 
 ### Prerequisites
@@ -95,7 +97,6 @@ npm run build
 
 ```bash
 npm run build
-npm run export
 ```
 
 ## 🌍 Multi-language Support
