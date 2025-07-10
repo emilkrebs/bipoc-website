@@ -11,4 +11,4 @@ The conference brings together Black, Indigenous and People of Color based in Eu
 ---
 
 *Get in touch:*
-If you are interested in learning more about us, want to collaborate, or have a request please write us an [e-mail](mailto:${CONTACT_EMAIL}).
+If you are interested in learning more about us, want to collaborate, or have a request please write us an [e-mail](mailto:bipoconference2020@riseup.net).
