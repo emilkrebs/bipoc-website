@@ -1,13 +1,15 @@
 import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
-import { REGISTRATION_FORM_URL, BIPOC_STATEMENT_TEXT } from "@/app/lib/constants";
+import { REGISTRATION_FORM_URL } from "@/app/lib/constants";
 import Image from "next/image";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
 
 export default async function FaqPage({ params }: LocaleProps) {
 	const { locale } = await params;
+	const data = await getTextData("faq/data", locale);
 
+	const bipocStatementData = await getTextData("bipoc-statement", locale);
 	const faqs = [
 		{
 			question: (await getTextData("faq/attend", locale)).title,
@@ -51,12 +53,16 @@ export default async function FaqPage({ params }: LocaleProps) {
 
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center bg-[url(/background_2.webp)] bg-fixed">			
-			<Statement />
-			
+			<Statement
+				title={bipocStatementData.title}
+				content={bipocStatementData.content}
+				registerText={data.registerNow}
+			/>
+
 			<section id="faq" className="flex flex-col items-center w-full  py-16 px-4">
 				<div className="flex flex-col w-full max-w-4xl p-8 bg-white/90 rounded-2xl shadow-2xl border border-neutral-200">
 					<h2 className="text-4xl font-extrabold text-neutral-900 mb-2 tracking-tight">FAQ</h2>
-					<p className="text-neutral-500 mb-8">Frequently Asked Questions</p>
+					<p className="text-neutral-500 mb-8">{data.title || "Frequently Asked Questions"}</p>
 					<div className="flex flex-col w-full gap-4">
 						{faqs.map((faq, index) => (
 							<details
@@ -104,7 +110,7 @@ export default async function FaqPage({ params }: LocaleProps) {
 	);
 }
 
-function Statement() {
+function Statement({ title, content, registerText }: { title?: string; content: string; registerText: string }) {
 	return (
 		<section
 			id="statement"
@@ -114,16 +120,16 @@ function Statement() {
 
 				<div className="flex flex-col items-start justify-start w-full max-w-2xl">
 					<h2 className="mb-4 text-3xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
-						The BI_POC-Statement
+						{title || "The BI_POC-Statement"}
 					</h2>
 					<div className="mb-6 text-base leading-relaxed text-left text-white/90 md:text-lg">
-						<RenderMarkdown content={BIPOC_STATEMENT_TEXT} />
+						<RenderMarkdown content={content} />
 					</div>
 					<div className="flex flex-row gap-4">
 						<LinkButton
 							href={REGISTRATION_FORM_URL}
 						>
-							Register Now!
+							{registerText || "Register Now!"}
 						</LinkButton>
 					</div>
 				</div>

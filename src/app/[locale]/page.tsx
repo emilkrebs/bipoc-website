@@ -5,20 +5,28 @@ import { getTextData } from "../lib/texts";
 import RenderMarkdown from "../components/markdown";
 import { LocaleProps } from "./layout";
 
+interface LandingSectionProps {
+	welcomeText: string;
+	bipocStatementData: { title?: string; content: string };
+	awarenessConceptData: { title?: string; content: string };
+}
 
 export default async function Home({ params }: LocaleProps) {
 	const { locale } = await params;
 	const welcomeText = await getTextData("welcome", locale);
+	const bipocStatementData = await getTextData("bipoc-statement", locale);
+	const awarenessConceptData = await getTextData("awareness-concept", locale);
+
 	return (
 		<main className="min-h-screen">
 
-			<LandingSection welcomeText={welcomeText.content} />
+			<LandingSection welcomeText={welcomeText.content} bipocStatementData={bipocStatementData} awarenessConceptData={awarenessConceptData} />
 
 		</main>
 	);
 }
 
-function LandingSection({ welcomeText }: { welcomeText: string }) {
+function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData }: LandingSectionProps) {
 	return (
 		<>
 			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high" />
@@ -53,7 +61,7 @@ function LandingSection({ welcomeText }: { welcomeText: string }) {
 									target="_blank"
 									className="px-5 py-2 rounded-full bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
 								>
-									BI_POC-Statement
+									{bipocStatementData.title || "The BI_POC-Statement"}
 								</Link>
 
 								<Link
@@ -61,7 +69,7 @@ function LandingSection({ welcomeText }: { welcomeText: string }) {
 									target="_blank"
 									className="px-5 py-2 rounded-full bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
 								>
-									Awarness Concept
+									{awarenessConceptData.title || "Awareness Concept"}
 								</Link>
 
 								<Link
