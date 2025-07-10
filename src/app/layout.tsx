@@ -34,9 +34,7 @@ export default async function RootLayout({
 	return (
 		<html>
 			<body>
-				<Navbar />
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);

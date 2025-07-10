@@ -1,6 +1,8 @@
 import "@/app/globals.css";
 import { notFound } from "next/navigation";
 import { isValidLocale, locales } from "../lib/localisation";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 
 export async function generateStaticParams() {
 	return locales.map((locale) => ({ locale }));
@@ -24,7 +26,9 @@ export default async function LocaleLayout({
 	return (
 		<html lang={locale}>
 			<body>
+				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

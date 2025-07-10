@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { getLocale } from "../lib/localisation";
 
 const links = [
 	{ href: "/about", label: "About" },
@@ -12,10 +14,12 @@ const links = [
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
+	const pathname = usePathname();
+	const locale = getLocale(pathname);
 
 	return (
 		<nav className="flex flex-row items-center justify-between w-full gap-2 p-4 text-base text-white bg-neutral-800 relative">
-			<Link href="/" className="font-bold text-pink-500">
+			<Link href={`/${locale}`} className="font-bold text-pink-500">
 				BIPoC Climate Justice Conference
 			</Link>
 			<div className="flex items-center gap-4">
@@ -34,7 +38,7 @@ export default function Navbar() {
 			{open && (
 				<div className="absolute top-full right-4 mt-2 bg-neutral-900 rounded shadow-lg flex flex-col min-w-[180px] z-50 md:hidden">
 					<Link
-						href="/"
+						href={`/${locale}`}
 						className="px-4 py-2 hover:bg-neutral-700"
 						onClick={() => setOpen(false)}
 					>
@@ -43,7 +47,7 @@ export default function Navbar() {
 					{links.map(({ href, label }) => (
 						<Link
 							key={href}
-							href={href}
+							href={`/${locale}${href}`}
 							className="px-4 py-2 hover:bg-neutral-700"
 							onClick={() => setOpen(false)}
 						>
@@ -55,7 +59,7 @@ export default function Navbar() {
 			{/* Desktop links */}
 			<div className="hidden md:flex gap-4 items-center">
 				{links.map(({ href, label }) => (
-					<Link key={href} href={href} className="hover:underline">
+					<Link key={href} href={`/${locale}${href}`} className="hover:underline">
 						{label}
 					</Link>
 				))}
