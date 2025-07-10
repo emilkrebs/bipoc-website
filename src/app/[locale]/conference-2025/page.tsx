@@ -1,7 +1,6 @@
 import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
-import { CONTACT_EMAIL, REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
-import Link from "next/link";
+import { REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
 import Sponsors from "./sponsors";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
@@ -11,6 +10,7 @@ const pagePath = "conference-2025";
 export default async function InformationPage({ params }: LocaleProps) {
 	const { locale } = await params;
 
+	const data = await getTextData(`${pagePath}/data`, locale);
 	const registrationText = (await getTextData(`${pagePath}/registration`, locale)).content;
 	const locationText = (await getTextData(`${pagePath}/location`, locale)).content;
 	const programText = (await getTextData(`${pagePath}/program`, locale)).content;
@@ -21,14 +21,14 @@ export default async function InformationPage({ params }: LocaleProps) {
 			<section className="flex flex-col items-center justify-center w-full">
 				<div className="flex flex-col items-start justify-start w-full md:max-w-6xl bg-black/70 rounded-xl p-4 md:p-8 shadow-2xl">
 					<h2 className="text-xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
-						Conference 2025
+						{data.title || "Conference 2025 Information"}
 					</h2>
-					<p className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
-						Everything you need to know at a glance. If you have any questions, please check the <Link href="/faq#faq" className="text-pink-500 hover:underline">FAQ</Link> or write us an <Link href={`mailto:${CONTACT_EMAIL}`} className="text-pink-500 hover:underline">email</Link>.
-					</p>
+					<div className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
+						<RenderMarkdown content={data.content} />
+					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-						Registration
+						{data.registration || "Registration"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={registrationText} />
@@ -36,19 +36,19 @@ export default async function InformationPage({ params }: LocaleProps) {
 							href={REGISTRATION_FORM_URL}
 							target="_blank"
 						>
-							Registration Form
+							{data.registrationForm || "Registration Form"}
 						</LinkButton>
 					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-						Location
+						{data.location || "Location"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={locationText} />
 					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-						Programm/ Schedule
+						{data.schedule || "Program/ Schedule"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={programText} />
@@ -56,12 +56,12 @@ export default async function InformationPage({ params }: LocaleProps) {
 							href={PROGRAM_URL}
 							target="_blank"
 						>
-							View Programm
+							{data.viewProgram || "View Program"}
 						</LinkButton>
 					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-						Awareness Concept
+						{data.awarenessConcept || "Awareness Concept"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={awarenessConceptText} />
@@ -69,7 +69,7 @@ export default async function InformationPage({ params }: LocaleProps) {
 							href={AWARENESS_CONCEPT_URL}
 							target="_blank"
 						>
-							Awareness Concept PDF
+							{data.awarenessConcept + " PDF" || "Awareness Concept PDF"}
 						</LinkButton>
 					</div>
 
