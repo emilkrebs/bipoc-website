@@ -3,25 +3,19 @@ import RenderMarkdown from "@/app/components/markdown";
 import { CONTACT_EMAIL, REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
 import Link from "next/link";
 import Sponsors from "./sponsors";
+import { LocaleProps } from "../layout";
+import { getTextData } from "@/app/lib/texts";
 
+const pagePath = "conference-2025";
 
-export default function InformationPage() {
-	const registrationText = `The registrations are open! If you would like to join us as a participant or contribute to this years program, please click the link below. Please do not book your travels before we have confirmed you as a contributor or participant.
-`;
+export default async function InformationPage({ params }: LocaleProps) {
+	const { locale } = await params;
 
-	const locationText = `This year we will be located in Basque Country in **Northern Spain** about an hour away from Bilbao. We are teaming up with a beautiful venue in a rural area. Due to security precautions, we will not share the explicit location of the venue on the website.  
+	const registrationText = (await getTextData(`${pagePath}/registration`, locale)).content;
+	const locationText = (await getTextData(`${pagePath}/location`, locale)).content;
+	const programText = (await getTextData(`${pagePath}/program`, locale)).content;
+	const awarenessConceptText = (await getTextData("awareness-concept", locale)).content;
 
-Once the registrations are approved, we will share all relevant details with attendees and contributors.
-
-This decision is informed mostly by wanting to be extra careful in an area that most of the core organizing team is not very familiar with.  
-We do not expect any kind of incident to occur! Besides that, we are planning a safety strategy for transport to and from the venue.
-`;
-
-	const programText = `Also this year we curated a wonderful programm, which is still waiting on your contribution. Get creative and submit whatever you like. We came up with a rough drafted of how we envision the sessions and timing. This is not a limitation but an inspiration! Any suggestion is welcome. We will do our best to fit it into this years curation. 
-
-To check out the draft please click the link below.`;
-
-	const awarenessConceptText = "Awareness is a collective effort for all our wellbeing. Click on the link below to access our awareness concept and code of conduct for our shared time. ";
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center w-full bg-[url(/background_2.webp)] bg-fixed py-12 px-2 md:px-16">
 			<section className="flex flex-col items-center justify-center w-full">

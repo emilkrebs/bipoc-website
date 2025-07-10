@@ -2,8 +2,12 @@ import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
 import { REGISTRATION_FORM_URL, BIPOC_STATEMENT_TEXT } from "@/app/lib/constants";
 import Image from "next/image";
+import { LocaleProps } from "../layout";
 
-export default function FaqPage() {
+export default async function FaqPage({ params }: LocaleProps) {
+	const { locale } = await params;
+
+
 	const faqs = [
 		{
 			question: "Who can attend the summit?",
