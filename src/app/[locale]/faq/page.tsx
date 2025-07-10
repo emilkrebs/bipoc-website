@@ -3,64 +3,45 @@ import RenderMarkdown from "@/app/components/markdown";
 import { REGISTRATION_FORM_URL, BIPOC_STATEMENT_TEXT } from "@/app/lib/constants";
 import Image from "next/image";
 import { LocaleProps } from "../layout";
+import { getTextData } from "@/app/lib/texts";
 
 export default async function FaqPage({ params }: LocaleProps) {
 	const { locale } = await params;
 
-
 	const faqs = [
 		{
-			question: "Who can attend the summit?",
-			answer: `The summit is open to comrades who identify as Black, Indigenous, and/or People of Color and who align with the political grounding shared above. We welcome all BIPoC who are passionate about social justice issues, all of which relate back to climate and environment. 
-**Our conference is not open to white comrades**. We are open to exploring ways of collaborating outside of this conference, but ask that any non-BIPoC comrades respect this space and refrain from joining.
-`,
+			question: (await getTextData("faq/attend", locale)).title,
+			answer: (await getTextData("faq/attend", locale)).content,
 			open: true,
 		},
 		{
-			question: "What about white-passing BIPoC?",
-			answer: `First of all, white-passing BIPoC are still welcome. If you are white-passing, we ask you to take some time to reflect on your experience in the world - in terms of access, safety and passing due to racial ambiguity. What does this means for you and for others? We ask these questions not to deny people their experiences or heritage, but rather to create a safer space for our communities and those most marginalized within them. In order to do so, it is fundamental that we all understand how our positionalities and privileges relate to power dynamics shaped the complexities of racism, classism and gender-based violence. How do these privileges inform how you should - or should not - show up in a BIPoC space? Which roles or postions in terms of leadership or decision-making can you take up - or maybe better not?
-
-If reading this activated you in any kind of way, we want to remind you to welcome these feelings or thoughts and not push them away. We don't ask anybody to defend themselves. This is an invitation to reflect and learn, so that we can welcome one another into the space with a full heart. 
-
-An offering in this moment can be the following information source: [Recognizing being white-passing as a privilege](https://www.queensjournal.ca/recognizing-being-white-passing-as-a-privilege/)
-`,
+			question: (await getTextData("faq/white-passing", locale)).title,
+			answer: (await getTextData("faq/white-passing", locale)).content,
 		},
 		{
-			question: "What are radical affinity spaces?",
-			answer: `As acknowledged above, the term BIPoC does not represent the complexity and nuances as people who experience oppression for our bodies and cultures. In learning from last year, we want to schedule significant time during the first day, to hold affinity spaces for people who share specific experiences. This space is an offering for people to bond over their shared identities or positions in socitey,to ask questions and exchange, to grieve and heal, and to celebrate and just exist together. This could look like spaces for Black folx, latinamerican Indigenous folx, Trans Inter and Non-Binary folx, dis_abled (visible and invisible) folx - this list is just a suggestion and we know that these identities overlap for many of us. If you feel like things are missing, need to be merged, or more specified, we are open to your ideas and rely on your contributions. 
-
-We encourage all affinity spaces to bring their reflections back to plenum as an opportunity to learn and grow as a collective.
-
-If you already want to suggest an affinity space we welcome you to get in touch with us. 
-
-For a deeper dive into affinity spaces: [The Power of Affinity Spaces](https://sisumagazine.com/blogs/issue-7-lawful-bodies/the-power-of-affinity-spaces)
-`,
+			question: (await getTextData("faq/radical-affinity", locale)).title,
+			answer: (await getTextData("faq/radical-affinity", locale)).content,
 		},
 		{
-			question: "What topics will be covered at the summit?",
-			answer: `The summit will cover a range of topics including:
-The conferene will have three full program days. These are themed as follows:  
-1. Day: Understanding our network: Acknowldgeing our differences, Learning from one another
-2. Day: Practicing New Worlds 
-3. Day: Carrying the Work Forward: Fuck The Emipre 
-
-In the website section Conference 2025 you can access our programm draft with more detailed information. We will post a detailed schedule once we have the sessions finalized.
-`,
+			question: (await getTextData("faq/affinity-spaces", locale)).title,
+			answer: (await getTextData("faq/affinity-spaces", locale)).content,
 		},
 		{
-			question: "How can I register for the summit?",
-			answer: `The registrations will open soon. Registrations are available following this link:
-[Registration Form](${REGISTRATION_FORM_URL})
-`,
+			question: (await getTextData("faq/topics", locale)).title,
+			answer: (await getTextData("faq/topics", locale)).content,
+		},
+		{
+			question: (await getTextData("faq/registration", locale)).title,
+			answer: (await getTextData("faq/registration", locale)).content,
 			open: true,
 		},
 		{
-			question: "Is there a virtual attendance option?",
-			answer: "Due to our capacities, we cannot offer an online format.",
+			question: (await getTextData("faq/virtual-attendance", locale)).title,
+			answer: (await getTextData("faq/virtual-attendance", locale)).content,
 		},
 		{
-			question: "I want to propose a session, but I can't find anything related in the program draft. Can I still submit it? ",
-			answer: "Yes! Our program draft is a curation that we came up with as a roadmap to move towards our overall objective of the conference. This is a tool that should help and inspire us. It is not a tool of exclusion. All proposals are welcome! We will do our best to fit all the ideas into the program."
+			question: (await getTextData("faq/session-proposal", locale)).title,
+			answer: (await getTextData("faq/session-proposal", locale)).content,
 		}
 	];
 
