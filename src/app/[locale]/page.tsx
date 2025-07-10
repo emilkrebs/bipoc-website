@@ -85,7 +85,7 @@ function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData 
 									aria-label="Instagram"
 									className="flex items-center justify-center size-10 rounded-full bg-white/80 hover:bg-white transition shadow-md"
 								>
-									<Image src="icons/instagram.svg" alt="Instagram" width={24} height={24} />
+									<Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
 								</Link>
 							</div>
 						</div>

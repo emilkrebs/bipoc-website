@@ -36,9 +36,9 @@ export default function Footer() {
 
 function SocialMediaLinks() {
 	const profiles = [
-		{ name: "Instagram", url: INSTAGRAM_URL, icon: "icons/instagram.svg" },
-		{ name: "YouTube", url: "https://www.youtube.com/channel/UCAU55PiRTlEZwLsSV_zoLsw", icon: "icons/youtube.svg" },
-		{ name: "Facebook", url: "https://www.facebook.com/BIPoCN", icon: "icons/facebook.svg" },
+		{ name: "Instagram", url: INSTAGRAM_URL, icon: "/icons/instagram.svg" },
+		{ name: "YouTube", url: "https://www.youtube.com/channel/UCAU55PiRTlEZwLsSV_zoLsw", icon: "/icons/youtube.svg" },
+		{ name: "Facebook", url: "https://www.facebook.com/BIPoCN", icon: "/icons/facebook.svg" },
 
 	];
 	return (
