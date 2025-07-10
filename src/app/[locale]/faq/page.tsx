@@ -1,7 +1,7 @@
-import LinkButton from "../components/link-button";
-import RenderMarkdown from "../components/markdown";
+import LinkButton from "@/app/components/link-button";
+import RenderMarkdown from "@/app/components/markdown";
+import { REGISTRATION_FORM_URL, BIPOC_STATEMENT_TEXT } from "@/app/lib/constants";
 import Image from "next/image";
-import { BIPOC_STATEMENT_TEXT, REGISTRATION_FORM_URL } from "../lib/constants";
 
 export default function FaqPage() {
 	const faqs = [

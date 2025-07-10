@@ -1,8 +1,9 @@
+import LinkButton from "@/app/components/link-button";
+import RenderMarkdown from "@/app/components/markdown";
+import { CONTACT_EMAIL, REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
 import Link from "next/link";
-import LinkButton from "../components/link-button";
-import RenderMarkdown from "../components/markdown";
-import { AWARENESS_CONCEPT_URL, CONTACT_EMAIL, PROGRAM_URL, REGISTRATION_FORM_URL } from "../lib/constants";
 import Sponsors from "./sponsors";
+
 
 export default function InformationPage() {
 	const registrationText = `The registrations are open! If you would like to join us as a participant or contribute to this years program, please click the link below. Please do not book your travels before we have confirmed you as a contributor or participant.

@@ -8,13 +8,6 @@ export interface Text {
 	content: string;
 }
 
-export interface LocalisationPageProps {
-	params: {
-		locale: Locale;
-	};
-}
-export type Locale = "en" | "es";
-
 
 const cachedTexts: Record<string, Text> = {};
 
@@ -48,12 +41,12 @@ export function createTextFromFile(fileName: string, directory: string): Text {
 	return object as Text;
 }
 
-export async function getTextsData(locale: Locale = "en") {
+export async function getTextsData(locale: string = "en") {
 	const localeDirectory = path.join(TEXTS_DIRECTORY, locale);
 	const fileNames = fs.readdirSync(localeDirectory);
 	return fileNames.map(fileName => createTextFromFile(fileName, localeDirectory));
 }
 
-export async function getTextData(id: string, locale: Locale = "en") {
+export async function getTextData(id: string, locale: string = "en") {
 	return createTextFromFile(`${id}.md`, path.join(TEXTS_DIRECTORY, locale));
 }

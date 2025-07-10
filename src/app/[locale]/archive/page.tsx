@@ -3,11 +3,11 @@
 import Collectives from "./collectives";
 import Image from "next/image";
 import Sponsors from "./sponsors";
-import LinkButton from "../components/link-button";
 import InstagramPosts from "./instagram-posts";
-import RenderMarkdown from "../components/markdown";
-import { CONTACT_EMAIL } from "../lib/constants";
 import { useState } from "react";
+import LinkButton from "@/app/components/link-button";
+import RenderMarkdown from "@/app/components/markdown";
+import { CONTACT_EMAIL } from "@/app/lib/constants";
 
 const imagesPath = "/archive/2024/photos";
 

@@ -1,6 +1,6 @@
+import RenderMarkdown from "@/app/components/markdown";
+import { CONTACT_EMAIL } from "@/app/lib/constants";
 import Image from "next/image";
-import RenderMarkdown from "../components/markdown";
-import { CONTACT_EMAIL } from "../lib/constants";
 
 const aboutText = `
 We are a collective of BIPoC activists based in Germany, Britain, Spain, Colombia and the US working to connect BIPoC-led climate justice groups and movements across Europe and beyond. As of now, we organize this initiative voluntarily in our free time.

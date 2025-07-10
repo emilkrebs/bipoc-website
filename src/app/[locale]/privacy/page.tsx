@@ -1,5 +1,6 @@
+import RenderMarkdown from "@/app/components/markdown";
 import { Metadata } from "next";
-import RenderMarkdown from "../components/markdown";
+
 
 const markdown = `
 # Privacy Policy

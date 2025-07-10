@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
+
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://bipoclimatejusticenetwork.org/"),
@@ -24,15 +25,14 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
-	params,
 }: Readonly<{
 	children: React.ReactNode;
-	params: { locale: string };
 }>) {
+
 	return (
-		<html lang={params.locale}>
+		<html>
 			<body>
 				<Navbar />
 				{children}
