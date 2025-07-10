@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { AWARENESS_CONCEPT_URL, INSTAGRAM_URL, } from "../lib/constants";
 import Link from "next/link";
-import { getTextData, getTextsData } from "../lib/texts";
+import { getTextData } from "../lib/texts";
 import RenderMarkdown from "../components/markdown";
+import { LocaleProps } from "./layout";
 
 
-
-export default async function Home() {
-	const welcomeText = await getTextData("welcome", "en");
-
+export default async function Home({ params }: LocaleProps) {
+	const { locale } = await params;
+	const welcomeText = await getTextData("welcome", locale);
 	return (
 		<main className="min-h-screen">
 
