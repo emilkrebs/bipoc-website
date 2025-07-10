@@ -7,8 +7,8 @@ export default function FaqPage() {
 	const faqs = [
 		{
 			question: "Who can attend the summit?",
-			answer: `The summit is open to comrades who identify as Black, Indigenous, and/or People of Color and who align with the political grounding shared above. We welcome all BIPoC who are passionate about social justice issues, all of which relate back to climate and environment.
-Our conference is not open to *white people*.
+			answer: `The summit is open to comrades who identify as Black, Indigenous, and/or People of Color and who align with the political grounding shared above. We welcome all BIPoC who are passionate about social justice issues, all of which relate back to climate and environment. 
+**Our conference is not open to white comrades**. We are open to exploring ways of collaborating outside of this conference, but ask that any non-BIPoC comrades respect this space and refrain from joining.
 `,
 			open: true,
 		},
@@ -54,6 +54,10 @@ In the website section Conference 2025 you can access our programm draft with mo
 			question: "Is there a virtual attendance option?",
 			answer: "Due to our capacities, we cannot offer an online format.",
 		},
+		{
+			question: "I want to propose a session, but I can't find anything related in the program draft. Can I still submit it? ",
+			answer: "Yes! Our program draft is a curation that we came up with as a roadmap to move towards our overall objective of the conference. This is a tool that should help and inspire us. It is not a tool of exclusion. All proposals are welcome! We will do our best to fit all the ideas into the program."
+		}
 	];
 
 	return (

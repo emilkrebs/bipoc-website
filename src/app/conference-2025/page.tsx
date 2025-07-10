@@ -5,7 +5,7 @@ import { AWARENESS_CONCEPT_URL, CONTACT_EMAIL, PROGRAM_URL, REGISTRATION_FORM_UR
 import Sponsors from "./sponsors";
 
 export default function InformationPage() {
-	const registrationText = `The registrations are open! If you would like to join us as a parcitipatant or contribute to this years program, please click the link below.
+	const registrationText = `The registrations are open! If you would like to join us as a participant or contribute to this years program, please click the link below. Please do not book your travels before we have confirmed you as a contributor or participant.
 `;
 
 	const locationText = `This year we will be located in Basque Country in **Northern Spain** about an hour away from Bilbao. We are teaming up with a beautiful venue in a rural area. Due to security precautions, we will not share the explicit location of the venue on the website.  
