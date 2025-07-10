@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Conferece 2024 | Imprint",
+	title: "BIPoC Climate Justice Conferece 2025 | Imprint",
 };
 
 export default async function Imprint({ params }: LocaleProps) {

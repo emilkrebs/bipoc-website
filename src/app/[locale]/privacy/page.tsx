@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-	title: "BIPoC Climate Justice Conferece 2024 | Privacy Policy",
+	title: "BIPoC Climate Justice Conferece 2025 | Privacy Policy",
 };
 
 export default async function Privacy({ params }: LocaleProps) {

@@ -11,6 +11,10 @@ const nextConfig = {
 		unoptimized: true,
 		minimumCacheTTL: 60 * 60 * 6 // 6 hours
 	},
+	// Ensure proper static generation
+	generateBuildId: async () => {
+		return "bipoc-static-build";
+	}
 };
 
 export default nextConfig;

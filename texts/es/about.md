@@ -1,5 +1,5 @@
 ---
-title: Acerca de la Conferencia de Justicia Climática BIPoC 2024
+title: Acerca de la Conferencia de Justicia Climática BIPoC 2025
 ---
 
 Somos un colectivo de activistas BIPoC con base en Alemania, Gran Bretaña, España, Colombia y Estados Unidos que trabaja para conectar grupos y movimientos de justicia climática liderados por BIPoC en Europa y más allá. Hasta ahora, organizamos esta iniciativa de manera voluntaria en nuestro tiempo libre.

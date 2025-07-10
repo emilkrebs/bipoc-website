@@ -1,5 +1,5 @@
 ---
-title: About the BIPoC Climate Justice Conference 2024
+title: About the BIPoC Climate Justice Conference 2025
 ---
 
 We are a collective of BIPoC activists based in Germany, Britain, Spain, Colombia and the US working to connect BIPoC-led climate justice groups and movements across Europe and beyond. As of now, we organize this initiative voluntarily in our free time.
