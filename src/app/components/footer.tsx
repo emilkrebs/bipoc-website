@@ -22,6 +22,14 @@ export default function Footer() {
 				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">Contact</Link>
 			</div>
 
+			{/* Developed with ❤️ by Emil Krebs */}
+			<div className="text-sm">
+				Developed with ❤️ by{" "}
+				<Link href="https://emilkrebs.dev" target="_blank" className="underline">
+					Emil Krebs
+				</Link>
+			</div>
+
 		</footer>
 	);
 }

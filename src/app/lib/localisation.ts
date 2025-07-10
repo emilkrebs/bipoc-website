@@ -1,6 +1,6 @@
 
 
-export const locales: string[] = ["en", "es"];
+export const locales: string[] = ["en", "es"]; // Add more locales as needed
 
 export function isValidLocale(locale: string): boolean {
 	return locales.includes(locale);
