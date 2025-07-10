@@ -6,6 +6,9 @@ export const AWARENESS_CONCEPT_URL = "/awareness_concept.pdf";
 export const INSTAGRAM_URL = "https://www.instagram.com/bipoc_climate_justice_network//";
 export const X_URL = "https://x.com/BipocN";
 
+export const TEXTS_DIRECTORY = "texts";
+
+
 // TODO: Update statement
 export const BIPOC_STATEMENT_TEXT = `
 BIPoC (Black, Indigenous, and People of Color) is an acronym used to highlight the unique experiences and systemic injustices faced by Black and Indigenous populations, while also acknowledging the broader category of People of Color. The term originated from the part of Turtle Island that is colonially known as the United States in the early 2010s and gained global prominence around 2020 following the police-state murder of George Floyd, Breonna Taylor, and many others. It is particularly used within activist and social justice circles as a way to center the specific struggles of racially marginalized groups. 
