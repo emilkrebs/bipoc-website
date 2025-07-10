@@ -17,7 +17,7 @@ export default function Footer() {
 
 			{/* Legal section */}
 			<div className="flex flex-col items-center justify-between gap-4 sm:gap-16 sm:flex-row w-fit">
-				<Link href={`/${locale}/imprint`} className="over:underline">Imprint</Link>
+				<Link href={`/${locale}/imprint`} className="hover:underline">Imprint</Link>
 				<Link href={`/${locale}/privacy`} className="hover:underline">Privacy Policy</Link>
 				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">Contact</Link>
 			</div>
