@@ -145,7 +145,7 @@ For static deployment, use `npm run export` to generate static files in the `out
 
 1. **For content changes**: Edit the markdown files in the `texts/` folder
 2. **For design/functionality changes**: Submit a pull request with your changes
-3. **For issues**: Open an issue on GitHub describing the problem
+3. **For issues/ feedback**: [Open an issue](https://github.com/emilkrebs/VailNote/issues/new) on GitHub and choose a label 
 
 ## 📧 Contact
 
