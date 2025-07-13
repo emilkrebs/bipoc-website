@@ -2,7 +2,7 @@
 
 ## ¿Qué información recopilamos?
 
-No recopilamos ninguna información personal de los visitantes a este sitio web. Esto significa que no recopilamos datos que puedan usarse para identificarte individualmente, como tu nombre, dirección de correo electrónico, número de teléfono o dirección IP.
+No recopilamos ninguna información personal de lxs visitantes a este sitio web. Esto significa que no recopilamos datos que puedan usarse para identificarte individualmente, como tu nombre, dirección de correo electrónico, número de teléfono o dirección IP.
 
 ## ¿Cómo usamos tu información?
 Como no recopilamos ninguna información personal de ti, no hay información para que usemos.
@@ -24,6 +24,6 @@ Nos reservamos el derecho de actualizar esta política de privacidad en cualquie
 
 ## Contáctanos
 
-Si tienes alguna pregunta sobre esta política de privacidad, por favor ponte en contacto con nosotros en [bipoconference2020@riseup.net](mailto:bipoconference2020@riseup.net).
+Si tienes alguna pregunta sobre esta política de privacidad, por favor ponte en contacto con nosotrxs en [bipoconference2020@riseup.net](mailto:bipoconference2020@riseup.net).
 
 Este sitio web es de propiedad comunitaria y de código abierto y está disponible en [GitHub](https://github.com/emilkrebs/bipoc-website).
