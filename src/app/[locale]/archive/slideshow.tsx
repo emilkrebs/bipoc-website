@@ -5,13 +5,14 @@ import Image from "next/image";
 
 const imagesPath = "/archive/2024/photos";
 
+// images start at image_1.webp
 export default function ImageSlideshow() {
-	const totalImages = 14;
+	const totalImages = 31;
 	const [current, setCurrent] = useState(0);
 
-	const goPrev = () => setCurrent((prev) => (prev === 0 ? totalImages - 1 : prev - 1));
-	const goNext = () => setCurrent((prev) => (prev === totalImages - 1 ? 0 : prev + 1));
-
+	const goPrev = () => setCurrent((current - 1 + totalImages) % totalImages);
+	const goNext = () => setCurrent((current + 1) % totalImages);
+	
 	return (
 		<div className="flex flex-col items-center w-full mt-8">
 			<div className="relative w-full aspect-square sm:aspect-[4/3] md:aspect-[16/9]">
@@ -21,7 +22,7 @@ export default function ImageSlideshow() {
 					sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 640px"
 					src={`${imagesPath}/image_${current + 1}.webp`}
 					alt={`Image ${current + 1}`}
-					className="object-cover w-full h-full rounded-lg shadow-lg"
+					className="object-contain w-full h-full rounded-lg"
 				/>
 				<button
 					onClick={goPrev}
