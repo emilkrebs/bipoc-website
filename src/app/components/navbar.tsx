@@ -5,14 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { getLocale } from "../lib/localisation";
 
-const links = [
-	{ href: "/about", label: "About" },
-	{ href: "/archive", label: "Archive" },
-	{ href: "/conference-2025", label: "Conference 2025" },
-	{ href: "/faq", label: "FAQ" },
-];
 
-export default function Navbar() {
+export default function Navbar({ links }: { links: { href: string; label: string }[] }) {
 	const [open, setOpen] = useState(false);
 	const pathname = usePathname();
 	const locale = getLocale(pathname);

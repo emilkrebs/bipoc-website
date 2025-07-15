@@ -6,7 +6,7 @@ import { INSTAGRAM_URL } from "../lib/constants";
 import { usePathname } from "next/navigation";
 import { getLocale } from "../lib/localisation";
 
-export default function Footer() {
+export default function Footer({ imprint, privacy, contact }: { imprint?: string; privacy?: string; contact?: string }) {
 	const pathname = usePathname();
 	const locale = getLocale(pathname);
 
@@ -17,9 +17,9 @@ export default function Footer() {
 
 			{/* Legal section */}
 			<div className="flex flex-col items-center justify-between gap-4 sm:gap-16 sm:flex-row w-fit">
-				<Link href={`/${locale}/imprint`} className="hover:underline">Imprint</Link>
-				<Link href={`/${locale}/privacy`} className="hover:underline">Privacy Policy</Link>
-				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">Contact</Link>
+				<Link href={`/${locale}/imprint`} className="hover:underline">{imprint}</Link>
+				<Link href={`/${locale}/privacy`} className="hover:underline">{privacy}</Link>
+				<Link href="mailto:bipoconference2020@riseup.net" className="hover:underline">{contact}</Link>
 			</div>
 
 			{/* Developed with ❤️ by Emil Krebs */}
