@@ -1,7 +1,7 @@
 import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
 import { REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
-import Sponsors from "./sponsors";
+import Sponsors from "../../components/sponsors";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
 import { locales } from "@/app/lib/localisation";
@@ -13,14 +13,26 @@ export async function generateStaticParams() {
 
 const pagePath = "conference-2025";
 
+const sponsorPath = "/sponsor";
+
+const sponsors: { href: string, src: string, title: string, rounded?: boolean }[] = [
+	{
+		href: "https://www.bewegungsstiftung.de/",
+		src: `${sponsorPath}/bewegungs_stiftung.svg`,
+		title: "Bewegungs Stiftung"
+	},
+
+];
+
 export default async function InformationPage({ params }: LocaleProps) {
 	const { locale } = await params;
 
 	const data = await getTextData(`${pagePath}/data`, locale);
+	const sponsorsData = await getTextData("data", locale);
 	const registrationText = (await getTextData(`${pagePath}/registration`, locale)).content;
 	const locationText = (await getTextData(`${pagePath}/location`, locale)).content;
 	const programText = (await getTextData(`${pagePath}/program`, locale)).content;
-	const awarenessConceptText = (await getTextData("awareness-concept", locale)).content;
+	const awarenessConcept = (await getTextData("awareness-concept", locale));
 
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center w-full bg-[url(/background_2.webp)] bg-fixed py-12 px-2 md:px-16">
@@ -67,20 +79,20 @@ export default async function InformationPage({ params }: LocaleProps) {
 					</div>
 
 					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-						{data.awarenessConcept || "Awareness Concept"}
+						{awarenessConcept.title || "Awareness Concept"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
-						<RenderMarkdown content={awarenessConceptText} />
+						<RenderMarkdown content={awarenessConcept.content} />
 						<LinkButton
 							href={AWARENESS_CONCEPT_URL}
 							target="_blank"
 						>
-							{data.awarenessConcept + " PDF" || "Awareness Concept PDF"}
+							{(awarenessConcept.title  || "Awareness Concept") + " PDF"}
 						</LinkButton>
 					</div>
 
 				</div>
-				<Sponsors />
+				<Sponsors title={sponsorsData.sponsorsTitle} sponsors={sponsors} />
 			</section>
 		</main>
 	);

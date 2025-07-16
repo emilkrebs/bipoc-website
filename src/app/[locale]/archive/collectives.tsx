@@ -96,10 +96,10 @@ const archiveCollectives: { href: string, src: string, title: string, rounded?: 
 	},
 ];
 
-export default function Collectives() {
+export default function Collectives({ title }: { title?: string }) {
 	return (
 		<section id="collectives" className="flex flex-col items-center sm:items-start justify-center w-full gap-8 py-8 text-white">
-			<h2 className="text-4xl font-bold border-b-2 border-black">Collectives</h2>
+			<h2 className="text-4xl font-bold border-b-2 border-black">{title || "Collectives"}</h2>
 
 			<div className="flex flex-wrap items-baseline justify-center sm:justify-between w-full gap-8 mt-8 sm:gap-16 h-fit lg:gap-28">
 				{archiveCollectives.map((collective, index) => (

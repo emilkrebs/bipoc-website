@@ -1,24 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const sponsorPath = "/sponsor";
+interface SponsorsProps {
+	title?: string;
+	sponsors?: { href: string, src: string, title: string, rounded?: boolean }[];
+}
 
-const collectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
-	{
-		href: "https://www.bewegungsstiftung.de/",
-		src: `${sponsorPath}/bewegungs_stiftung.svg`,
-		title: "Bewegungs Stiftung"
-	},
-
-];
-
-export default function Sponsors() {
+export default function Sponsors({ title, sponsors = [] }: SponsorsProps) {
 	return (
-		<section id="collectives" className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
-			<h2 className="text-4xl font-bold text-center border-b-2 border-black">Sponsored by</h2>
+		<section id="sponsors" className="flex flex-col items-center justify-center w-full gap-8 p-8 text-white">
+			<h2 className="text-4xl font-bold text-center border-b-2 border-black">{title}</h2>
 
 			<div className="flex flex-wrap items-baseline justify-center w-full gap-8 mt-8 sm:justify-evenly sm:gap-16 h-fit lg:gap-28">
-				{collectives.map((collective, index) => (
+				{sponsors.map((collective, index) => (
 					<Link key={index} className="w-64 transition-transform h-fit group" href={collective.href} title={collective.title}>
 						<Image
 							className={`object-cover size-max ${collective.rounded ? "rounded-full" : ""}`}
