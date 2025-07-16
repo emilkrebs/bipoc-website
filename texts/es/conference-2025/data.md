@@ -8,4 +8,4 @@ viewProgram: "Ver Programa"
 awernessConcept: "Concepto de Conciencia/Cuidado"
 ---
 
-Todo lo que necesitas saber de un vistazo. Si tienes alguna pregunta, por favor consulta las [FAQ](./faq#faq) o escríbenos un [correo electrónico](mailto:bipoconference2020@riseup.net).
+Todo lo que necesitas saber de un vistazo. Si tienes alguna pregunta, por favor consulta las [FAQ](../faq#faq) o escríbenos un [correo electrónico](mailto:bipoconference2020@riseup.net).
