@@ -63,7 +63,7 @@ function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData 
 
 							<div className="flex flex-col md:flex-row items-start justify-start gap-4 my-8">
 								<Link
-									href="/faq"
+									href="./faq"
 									target="_blank"
 									className="px-5 py-2 rounded-full bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
 								>
