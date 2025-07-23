@@ -45,7 +45,7 @@ export default async function InformationPage({ params }: LocaleProps) {
 						<RenderMarkdown content={data.content} />
 					</div>
 
-					<h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+					<h3 id="registration" className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
 						{data.registration || "Registration"}
 					</h3>
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">

@@ -13,6 +13,7 @@ export async function generateStaticParams() {
 
 interface LandingSectionProps {
 	welcomeText: string;
+	registerText: string;
 	bipocStatementData: { title?: string; content: string };
 	awarenessConceptData: { title?: string; content: string };
 }
@@ -22,17 +23,18 @@ export default async function Home({ params }: LocaleProps) {
 	const welcomeText = await getTextData("welcome", locale);
 	const bipocStatementData = await getTextData("bipoc-statement", locale);
 	const awarenessConceptData = await getTextData("awareness-concept", locale);
+	const registerText = (await getTextData("conference-2025/registration", locale)).registrationForm;
 
 	return (
 		<main className="min-h-screen">
 
-			<LandingSection welcomeText={welcomeText.content} bipocStatementData={bipocStatementData} awarenessConceptData={awarenessConceptData} />
+			<LandingSection welcomeText={welcomeText.content} bipocStatementData={bipocStatementData} awarenessConceptData={awarenessConceptData} registerText={registerText} />
 
 		</main>
 	);
 }
 
-function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData }: LandingSectionProps) {
+function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData, registerText }: LandingSectionProps) {
 	return (
 		<>
 			<link rel="preload" href="/background.webp" as="image" type="image/webp" fetchPriority="high" />
@@ -76,6 +78,14 @@ function LandingSection({ welcomeText, bipocStatementData, awarenessConceptData 
 									className="px-5 py-2 rounded-full bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
 								>
 									{awarenessConceptData.title || "Awareness Concept"}
+								</Link>
+
+								
+								<Link
+									href="./conference-2025#registration"
+									className="px-5 py-2 rounded-full bg-pink-500 text-white font-semibold shadow-md hover:-translate-y-0.5 transition"
+								>
+									{registerText || "Register Now!"}
 								</Link>
 
 								<Link
