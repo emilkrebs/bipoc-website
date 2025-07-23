@@ -23,7 +23,7 @@ export default async function Home({ params }: LocaleProps) {
 	const welcomeText = await getTextData("welcome", locale);
 	const bipocStatementData = await getTextData("bipoc-statement", locale);
 	const awarenessConceptData = await getTextData("awareness-concept", locale);
-	const registerText = (await getTextData("conference-2025/registration", locale)).registrationForm;
+	const registerText = (await getTextData("conference-2025/data", locale)).registrationForm;
 
 	return (
 		<main className="min-h-screen">
