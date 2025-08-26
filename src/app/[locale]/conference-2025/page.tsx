@@ -22,6 +22,31 @@ const sponsors: { href: string, src: string, title: string, rounded?: boolean }[
 		src: `${sponsorPath}/bewegungs_stiftung.svg`,
 		title: "Bewegungs Stiftung"
 	},
+	{
+		href: "https://guerrillafoundation.org/",
+		src: `${sponsorPath}/guerrilla.svg`,
+		title: "Guerrilla Foundation"
+	},
+	{
+		href: "https://www.heidehof-stiftung.de/",
+		src: `${sponsorPath}/guerrilla.svg`,
+		title: "Heidenhof Stiftung"
+	},
+	{
+		href: "https://www.solarpowers.de/das-projekt/",
+		src: `${sponsorPath}/solar_powers.png`,
+		title: "Solar Powers"
+	},
+	{
+		href: "https://www.themovementhub.org/",
+		src: `${sponsorPath}/movement_hub.png`,
+		title: "The Movement Hub"
+	},
+	{
+		href: "https://www.collectiveabundance.org/",
+		src: `${sponsorPath}/collective_abundance.png`,
+		title: "Collective Abundance"
+	}
 
 ];
 
@@ -67,7 +92,7 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 		title: "colectivo.mawvn",
 		rounded: true
 	},
-]; 
+];
 
 export default async function InformationPage({ params }: LocaleProps) {
 	const { locale } = await params;
@@ -132,7 +157,7 @@ export default async function InformationPage({ params }: LocaleProps) {
 							href={AWARENESS_CONCEPT_URL}
 							target="_blank"
 						>
-							{(awarenessConcept.title  || "Awareness Concept") + " PDF"}
+							{(awarenessConcept.title || "Awareness Concept") + " PDF"}
 						</LinkButton>
 					</div>
 

@@ -13,23 +13,22 @@ export async function generateStaticParams() {
 	return locales.map((locale) => ({ locale }));
 }
 
-const sponsorPath = "/archive/2024/sponsor";
 const collectivePath = "/archive/2024/collectives";
 
 const sponsors: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
 		href: "https://www.bewegungsstiftung.de/",
-		src: `${sponsorPath}/bewegungs_stiftung.svg`,
+		src: "sponsor/bewegungs_stiftung.svg",
 		title: "Bewegungs Stiftung"
 	},
 	{
 		href: "https://guerrillafoundation.org/",
-		src: `${sponsorPath}/guerrilla.svg`,
+		src: "sponsor/guerrilla.svg",
 		title: "Guerrilla Foundation"
 	},
 	{
 		href: "https://www.heidehof-stiftung.de/",
-		src: `${sponsorPath}/heidenhof_stiftung.png`,
+		src: "sponsor/heidenhof_stiftung.png",
 		title: "Heidenhof Stiftung"
 	},
 ];
