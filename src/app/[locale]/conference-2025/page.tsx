@@ -29,12 +29,12 @@ const sponsors: { href: string, src: string, title: string, rounded?: boolean }[
 	},
 	{
 		href: "https://www.heidehof-stiftung.de/",
-		src: `${sponsorPath}/guerrilla.svg`,
+		src: `${sponsorPath}/heidenhof_stiftung.png`,
 		title: "Heidenhof Stiftung"
 	},
 	{
 		href: "https://www.solarpowers.de/das-projekt/",
-		src: `${sponsorPath}/solar_powers.png`,
+		src: `${sponsorPath}/solarpowers.png`,
 		title: "Solar Powers"
 	},
 	{
