@@ -5,6 +5,7 @@ import Sponsors from "../../components/sponsors";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
 import { locales } from "@/app/lib/localisation";
+import Collectives from "@/app/components/collectives";
 
 // Generate static params for all locales
 export async function generateStaticParams() {
@@ -12,8 +13,8 @@ export async function generateStaticParams() {
 }
 
 const pagePath = "conference-2025";
-
 const sponsorPath = "/sponsor";
+const collectivePath = "/collectives";
 
 const sponsors: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
@@ -23,6 +24,50 @@ const sponsors: { href: string, src: string, title: string, rounded?: boolean }[
 	},
 
 ];
+
+const collectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
+	{
+		href: "https://www.instagram.com/colectivo.amra/",
+		src: `${collectivePath}/amra.webp`,
+		title: "AMRA COLLECTIVE"
+	},
+	{
+		href: "https://www.ataec.com/user/274",
+		src: `${collectivePath}/colectivx.webp`,
+		title: "Colectivx Raíces Negras",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/conuco_leipzig/",
+		src: `${collectivePath}/conuco_leipzig.webp`,
+		title: "Conuco Leipzig",
+		rounded: true
+	},
+	{
+		href: "https://www.youtube.com/@CasaMassape",
+		src: `${collectivePath}/casa_massape.webp`,
+		title: "Massape Xilo Colectivo",
+		rounded: true
+	},
+	{
+		href: "",
+		src: `${collectivePath}/soulartath.webp`,
+		title: "Soulartath",
+		rounded: true
+	},
+	{
+		href: "",
+		src: `${collectivePath}/kokoko.webp`,
+		title: "Kokoko",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/colectivo.mawvn/",
+		src: `${collectivePath}/mawvn.webp`,
+		title: "colectivo.mawvn",
+		rounded: true
+	},
+]; 
 
 export default async function InformationPage({ params }: LocaleProps) {
 	const { locale } = await params;
@@ -36,7 +81,7 @@ export default async function InformationPage({ params }: LocaleProps) {
 
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center w-full bg-[url(/background_2.webp)] bg-fixed py-12 px-2 md:px-16">
-			<section className="flex flex-col items-center justify-center w-full">
+			<section className="flex flex-col items-center justify-center w-full gap-2">
 				<div className="flex flex-col items-start justify-start w-full md:max-w-6xl bg-black/70 rounded-xl p-4 md:p-8 shadow-2xl">
 					<h2 className="text-xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
 						{data.title || "Conference 2025 Information"}
@@ -92,6 +137,9 @@ export default async function InformationPage({ params }: LocaleProps) {
 					</div>
 
 				</div>
+
+				<Collectives title={data.collectives} collectives={collectives} />
+
 				<Sponsors title={sponsorsData.sponsorsTitle} sponsors={sponsors} />
 			</section>
 		</main>

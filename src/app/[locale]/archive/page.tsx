@@ -1,4 +1,3 @@
-import Collectives from "./collectives";
 import InstagramPosts from "./instagram-posts";
 import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
@@ -7,6 +6,7 @@ import { LocaleProps } from "../layout";
 import ImageSlideshow from "./slideshow";
 import { locales } from "@/app/lib/localisation";
 import Sponsors from "@/app/components/sponsors";
+import Collectives from "@/app/components/collectives";
 
 // Generate static params for all locales
 export async function generateStaticParams() {
@@ -14,6 +14,7 @@ export async function generateStaticParams() {
 }
 
 const sponsorPath = "/archive/2024/sponsor";
+const collectivePath = "/archive/2024/collectives";
 
 const sponsors: { href: string, src: string, title: string, rounded?: boolean }[] = [
 	{
@@ -33,6 +34,100 @@ const sponsors: { href: string, src: string, title: string, rounded?: boolean }[
 	},
 ];
 
+const archiveCollectives: { href: string, src: string, title: string, rounded?: boolean }[] = [
+	{
+		href: "https://linktr.ee/back2soilbasics",
+		src: `${collectivePath}/back2soilbasics.webp`,
+		title: "@back2soilbasics"
+	},
+	{
+		href: "https://stichtingaralez.com/",
+		src: `${collectivePath}/aralez.webp`,
+		title: "Aralez"
+	},
+	{
+		href: "https://herewedrawtheline.org/",
+		src: `${collectivePath}/herewedrawtheline.svg`,
+		title: "Here we draw the line"
+	},
+	{
+		href: "https://mamakiya.org/",
+		src: `${collectivePath}/mamakiya.webp`,
+		title: "Mamakiya"
+	},
+	{
+		href: "https://afrofeminas.com/",
+		src: `${collectivePath}/afrofeminas.webp`,
+		title: "Afrofeminas"
+	},
+	{
+		href: "https://www.instagram.com/colectivo.amra/",
+		src: "collectives/amra.webp",
+		title: "AMRA COLLECTIVE"
+	},
+	{
+		href: "https://bewegungsschule.org/",
+		src: `${collectivePath}/bewegungsschule.webp`,
+		title: "Bewegungsschule",
+		rounded: true
+	},
+	{
+		href: "https://www.ataec.com/user/274",
+		src: "collectives/colectivx.webp",
+		title: "Colectivx Raíces Negras",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/afrofem.marseille",
+		src: `${collectivePath}/afroqueerfem.webp`,
+		title: "AfroQueerFem",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/collettivo.menen/",
+		src: `${collectivePath}/menen_abegascn.webp`,
+		title: "Collettivo Menen Abegasc",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/conuco_leipzig/",
+		src: "collectives/conuco_leipzig.webp",
+		title: "Conuco Leipzig",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/xrnl_rebelsofcolour",
+		src: `${collectivePath}/rebels_of_color.webp`,
+		title: "Rebels of Colour",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/sudanuprisinggermany/",
+		src: `${collectivePath}/sudan_uprising_germany.webp`,
+		title: "SudanUprising Germany",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/roc_awareness",
+		src: `${collectivePath}/roses_of_care.webp`,
+		title: "Roses of Care Awareness",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/quilombooalle/",
+		src: `${collectivePath}/quilombooalle.webp`,
+		title: "Quilombooalle",
+		rounded: true
+	},
+	{
+		href: "https://www.cric-colombia.org/portal/",
+		src: `${collectivePath}/cric_colombia.webp`,
+		title: "Cric Colombia",
+		rounded: true
+	},
+];
+
+
 export default async function ArchivePage({ params }: LocaleProps) {
 	const { locale } = await params;
 	const archiveData = (await getTextData("archive", locale));
@@ -50,7 +145,7 @@ export default async function ArchivePage({ params }: LocaleProps) {
 
 				<ImageSlideshow />
 
-				<Collectives title={archiveData.collectives} />
+				<Collectives title={data.collectives} collectives={archiveCollectives} />
 
 			</div>
 			<Sponsors title={data.sponsorsTitle} sponsors={sponsors} />
