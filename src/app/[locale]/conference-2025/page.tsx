@@ -92,6 +92,25 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 		title: "colectivo.mawvn",
 		rounded: true
 	},
+	{
+		href: "https://www.instagram.com/munaykollektiv/",
+		src: `${collectivePath}/munay.webp`,
+		title: "Munay Kollektiv",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/collectivesabr/",
+		src: `${collectivePath}/sabr.webp`,
+		title: "Collective Sabr",
+		rounded: true
+	},
+	{
+		href: "https://www.instagram.com/timetospringup/",
+		src: `${collectivePath}/springup.webp`,
+		title: "Time to Spring Up",
+		rounded: true
+	}
+
 ];
 
 export default async function InformationPage({ params }: LocaleProps) {
