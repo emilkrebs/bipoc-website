@@ -6,6 +6,7 @@ location: "Ubicación"
 schedule: "Programa/ Horarios"
 viewProgram: "Ver Programa"
 awernessConcept: "Concepto de Conciencia/Cuidado"
+programURL: "https://www.canva.com/design/DAGx8NVgtwI/w4nx3ZS0typkk38XZ_FNGA/view?utm_content=DAGx8NVgtwI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfd06a2eb95"
 ---
 
 Todo lo que necesitas saber de un vistazo. Si tienes alguna pregunta, por favor consulta las [FAQ](../faq#faq) o escríbenos un [correo electrónico](mailto:bipoconference2020@riseup.net).

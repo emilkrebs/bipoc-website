@@ -1,6 +1,6 @@
 import LinkButton from "@/app/components/link-button";
 import RenderMarkdown from "@/app/components/markdown";
-import { REGISTRATION_FORM_URL, PROGRAM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
+import { REGISTRATION_FORM_URL, AWARENESS_CONCEPT_URL } from "@/app/lib/constants";
 import Sponsors from "../../components/sponsors";
 import { LocaleProps } from "../layout";
 import { getTextData } from "@/app/lib/texts";
@@ -109,6 +109,12 @@ const collectives: { href: string, src: string, title: string, rounded?: boolean
 		src: `${collectivePath}/springup.webp`,
 		title: "Time to Spring Up",
 		rounded: true
+	},
+	{
+		href: "",
+		src: `${collectivePath}/voces_guatemala.webp`,
+		title: "Voces de Guatemala en Berlín",
+		rounded: true
 	}
 
 ];
@@ -160,7 +166,7 @@ export default async function InformationPage({ params }: LocaleProps) {
 					<div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
 						<RenderMarkdown content={programText} />
 						<LinkButton
-							href={PROGRAM_URL}
+							href={data.programURL}
 							target="_blank"
 						>
 							{data.viewProgram || "View Program"}
