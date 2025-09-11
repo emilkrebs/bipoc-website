@@ -1,12 +1,15 @@
 # BIPoC Climate Justice Conference Website
 
-This is the source code for the official website of the **BIPoC Climate Justice Conference 2025**.
+This is the source code for the official website of the **BIPoC Climate Justice
+Conference 2025**.
 
-The website supports multiple languages (English and Spanish) and automatically detects the user's browser language to provide the best experience.
+The website supports multiple languages (English and Spanish) and automatically
+detects the user's browser language to provide the best experience.
 
 ## 📝 Editing Website Content (For Non-Developers)
 
-You can easily update the website content by editing markdown files. No programming knowledge required!
+You can easily update the website content by editing markdown files. No
+programming knowledge required!
 
 ### Where to find content files:
 
@@ -30,7 +33,8 @@ texts/
 
 ### How to edit content:
 
-1. **Find the file you want to edit** in either `texts/en/` (English) or `texts/es/` (Spanish)
+1. **Find the file you want to edit** in either `texts/en/` (English) or
+   `texts/es/` (Spanish)
 2. **Open the `.md` file** with any text editor (even Notepad works!)
 3. **Edit the text** below the `---` lines at the top
 4. **Save the file**
@@ -41,24 +45,28 @@ texts/
 To change the welcome page text, edit `texts/en/welcome.md`:
 
 ```markdown
---- # Don't change this line
-title: Welcome  # Here you can change the title
---- # Don't change this line
+--- # Don't change this line title: Welcome # Here you can change the title ---
 
-Your content goes here...  # Edit this part
-You can use **bold text** and [links](https://example.com)
+# Don't change this line
+
+Your content goes here... # Edit this part You can use **bold text** and
+[links](https://example.com)
 ```
 
-Take a look at the markdown cheatsheet for more formatting options: [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
+Take a look at the markdown cheatsheet for more formatting options:
+[Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)
 
 ### Important notes:
 
-- **Don't edit the lines between `---`** at the top of files (these are settings)
+- **Don't edit the lines between `---`** at the top of files (these are
+  settings)
 - **Keep the same file structure** in both English and Spanish folders
 - **Use simple markdown formatting**: `**bold**`, `*italic*`, `[link text](url)`
-- **Test your changes** by running the website locally (see developer section below)
+- **Test your changes** by running the website locally (see developer section
+  below)
 
-If data or content is missing, the website will fall back to the English version automatically.
+If data or content is missing, the website will fall back to the English version
+automatically.
 
 ## 🛠️ Developer Setup
 
@@ -70,17 +78,20 @@ If data or content is missing, the website will fall back to the English version
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/emilkrebs/bipoc-website.git
 cd bipoc-website
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Start development server**
+
 ```bash
 npm run dev
 ```
@@ -101,7 +112,8 @@ npm run build
 
 ## 🌍 Multi-language Support
 
-The website automatically detects the user's browser language and redirects them to the appropriate version:
+The website automatically detects the user's browser language and redirects them
+to the appropriate version:
 
 - **English**: `/en`
 - **Spanish**: `/es`
@@ -136,17 +148,22 @@ export const locales: string[] = ["en", "es", "fr"]; // Add new language codes h
 
 The website can be deployed as:
 
-- **Static site** on Netlify, Vercel, or GitHub Pages (Currently using GitHub Pages)
+- **Static site** on Netlify, Vercel, or GitHub Pages (Currently using GitHub
+  Pages)
 - **Server-side rendered** on any Node.js hosting platform
 
-For static deployment, use `npm run export` to generate static files in the `out/` directory.
+For static deployment, use `npm run export` to generate static files in the
+`out/` directory.
 
 ## 🤝 Contributing
 
 1. **For content changes**: Edit the markdown files in the `texts/` folder
 2. **For design/functionality changes**: Submit a pull request with your changes
-3. **For issues/ feedback**: [Open an issue](https://github.com/emilkrebs/VailNote/issues/new) on GitHub and choose a label 
+3. **For issues/ feedback**:
+   [Open an issue](https://github.com/emilkrebs/VailNote/issues/new) on GitHub
+   and choose a label
 
 ## 📧 Contact
 
-For questions about the website content contact the lead developer Emil Krebs at [emilkrebs.dev](https://emilkrebs.dev).
+For questions about the website content contact the lead developer Emil Krebs at
+[emilkrebs.dev](https://emilkrebs.dev).
