@@ -135,8 +135,6 @@ export default async function InformationPage({ params }: LocaleProps) {
 
     const data = await getTextData(`${pagePath}/data`, locale);
     const sponsorsData = await getTextData("data", locale);
-    const registrationText =
-    (await getTextData(`${pagePath}/registration`, locale)).content;
     const locationText =
     (await getTextData(`${pagePath}/location`, locale)).content;
     const programText =
@@ -152,22 +150,6 @@ export default async function InformationPage({ params }: LocaleProps) {
                     </h2>
                     <div className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
                         <RenderMarkdown content={data.content} />
-                    </div>
-
-                    <h3
-                        id="registration"
-                        className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl"
-                    >
-                        {data.registration || "Registration"}
-                    </h3>
-                    <div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
-                        <RenderMarkdown content={registrationText} />
-                        <LinkButton
-                            href={REGISTRATION_FORM_URL}
-                            target="_blank"
-                        >
-                            {data.registrationForm || "Registration Form"}
-                        </LinkButton>
                     </div>
 
                     <h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">

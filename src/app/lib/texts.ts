@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { TEXTS_DIRECTORY } from "./constants";
 
-export interface Text {
+export interface TextData {
   id: string;
   content: string;
 
@@ -11,7 +11,7 @@ export interface Text {
 }
 
 // Use locale-specific cache keys to prevent cross-locale contamination
-const cachedTexts: Record<string, Text> = {};
+const cachedTexts: Record<string, TextData> = {};
 
 export function getMarkdownContent(fullPath: string) {
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -22,7 +22,7 @@ export function createTextFromFile(
     fileName: string,
     directory: string,
     locale: string,
-): Text {
+): TextData {
     // Create a cache key that includes the locale to prevent cross-contamination
     const cacheKey = `${locale}:${fileName}`;
 
@@ -42,7 +42,7 @@ export function createTextFromFile(
     };
 
     cachedTexts[cacheKey] = object;
-    return object as Text;
+    return object as TextData;
 }
 
 export async function getTextsData(locale: string = "en") {
