@@ -11,4 +11,5 @@ sponsorsTitle: Patrocinado por
 viewSchedule: Ver horario
 links: Enlaces
 instagramPosts: Publicaciones de Instagram
+conference2025Photos: Fotos de la Conferencia 2025
 ---

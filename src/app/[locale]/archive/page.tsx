@@ -7,6 +7,8 @@ import ImageSlideshow from "./slideshow";
 import { locales } from "@/app/lib/localisation";
 import Sponsors from "@/app/components/sponsors";
 import Collectives from "@/app/components/collectives";
+import Archive2025Gallery from "./archive2025-gallery";
+import { getArchive2025Images } from "@/app/lib/archive2025Images";
 
 // Generate static params for all locales
 export async function generateStaticParams() {
@@ -16,33 +18,33 @@ export async function generateStaticParams() {
 const collectivePath = "/archive/2024/collectives";
 
 const sponsors: {
-  href: string;
-  src: string;
-  title: string;
-  rounded?: boolean;
+    href: string;
+    src: string;
+    title: string;
+    rounded?: boolean;
 }[] = [
     {
         href: "https://www.bewegungsstiftung.de/",
-        src: "sponsor/bewegungs_stiftung.svg",
+        src: "/sponsor/bewegungs_stiftung.svg",
         title: "Bewegungs Stiftung",
     },
     {
         href: "https://guerrillafoundation.org/",
-        src: "sponsor/guerrilla.svg",
+        src: "/sponsor/guerrilla.svg",
         title: "Guerrilla Foundation",
     },
     {
         href: "https://www.heidehof-stiftung.de/",
-        src: "sponsor/heidenhof_stiftung.png",
+        src: "/sponsor/heidenhof_stiftung.png",
         title: "Heidenhof Stiftung",
     },
 ];
 
 const archiveCollectives: {
-  href: string;
-  src: string;
-  title: string;
-  rounded?: boolean;
+    href: string;
+    src: string;
+    title: string;
+    rounded?: boolean;
 }[] = [
     {
         href: "https://linktr.ee/back2soilbasics",
@@ -71,7 +73,7 @@ const archiveCollectives: {
     },
     {
         href: "https://www.instagram.com/colectivo.amra/",
-        src: "collectives/amra.webp",
+        src: `${collectivePath}/amra.webp`,
         title: "AMRA COLLECTIVE",
     },
     {
@@ -82,7 +84,7 @@ const archiveCollectives: {
     },
     {
         href: "https://www.ataec.com/user/274",
-        src: "collectives/colectivx.webp",
+        src: `${collectivePath}/colectivx.webp`,
         title: "Colectivx Raíces Negras",
         rounded: true,
     },
@@ -100,7 +102,7 @@ const archiveCollectives: {
     },
     {
         href: "https://www.instagram.com/conuco_leipzig/",
-        src: "collectives/conuco_leipzig.webp",
+        src: `${collectivePath}/conuco_leipzig.webp`,
         title: "Conuco Leipzig",
         rounded: true,
     },
@@ -140,9 +142,18 @@ export default async function ArchivePage({ params }: LocaleProps) {
     const { locale } = await params;
     const archiveData = await getTextData("archive", locale);
     const data = await getTextData("data", locale);
+    const archive2025Images = getArchive2025Images();
+
     return (
         <main className="min-h-screen flex flex-col items-center justify-start gap-4 bg-[url(/background_2.webp)] bg-fixed py-8 md:py-16 px-2 md:px-16 text-white">
             <div className="w-full max-w-7xl">
+
+                {/* 2025 Archive Images */}
+                <Archive2025Gallery
+                    images={archive2025Images}
+                    title={data.conference2025Photos || "Conference 2025 Photos"}
+                />
+                
                 <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-8 md:mb-10 tracking-tight text-center drop-shadow-lg">
                     {archiveData.title || "Archive 2024"}
                 </h1>

@@ -11,4 +11,5 @@ sponsorsTitle: Sponsored by
 viewSchedule: View Schedule
 links: Links
 instagramPosts: Instagram Posts
+conference2025Photos: Conference 2025 Photos
 ---
