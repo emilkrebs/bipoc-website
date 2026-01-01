@@ -213,7 +213,7 @@ function RadioProgram({ data }: { data: any }) {
                         {data.radioParagraph3 || "The resulting piece weaves together these diverse sonic fragments into a shared narrative — amplifying decolonial perspectives on climate, justice, and community."}
                     </p>
 
-                    <LinkButton href="https://www.swisstransfer.com/d/bbe367f5-93fc-4c28-ab15-077fcf4c4274">
+                    <LinkButton href="../../radio_program.mp3" target="_blank">
                         🎵 {data.radioButtonText || "Listen to the Audio Collage"}
                     </LinkButton>
                 </div>
