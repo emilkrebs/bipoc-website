@@ -10,195 +10,90 @@ import { getTextData } from "@/app/lib/texts";
 import { locales } from "@/app/lib/localisation";
 import Collectives from "@/app/components/collectives";
 
+// ─── Data imports ──────────────────────────────────────────────────────────────
+// To add or remove collectives: edit  src/data/collectives.json
+// To add or remove sponsors:    edit  src/data/sponsors.json
+import collectivesData from "@/data/collectives.json";
+import sponsorsData from "@/data/sponsors.json";
+
 // Generate static params for all locales
 export async function generateStaticParams() {
     return locales.map((locale) => ({ locale }));
 }
 
 const pagePath = "conference-2025";
-const sponsorPath = "/sponsor";
-const collectivePath = "/collectives";
-
-const sponsors: {
-  href: string;
-  src: string;
-  title: string;
-  rounded?: boolean;
-}[] = [
-    {
-        href: "https://www.bewegungsstiftung.de/",
-        src: `${sponsorPath}/bewegungs_stiftung.svg`,
-        title: "Bewegungs Stiftung",
-    },
-    {
-        href: "https://guerrillafoundation.org/",
-        src: `${sponsorPath}/guerrilla.svg`,
-        title: "Guerrilla Foundation",
-    },
-    {
-        href: "https://www.heidehof-stiftung.de/",
-        src: `${sponsorPath}/heidenhof_stiftung.png`,
-        title: "Heidenhof Stiftung",
-    },
-    {
-        href: "https://www.solarpowers.de/das-projekt/",
-        src: `${sponsorPath}/solarpowers.png`,
-        title: "Solar Powers",
-    },
-    {
-        href: "https://www.themovementhub.org/",
-        src: `${sponsorPath}/movement_hub.png`,
-        title: "The Movement Hub",
-    },
-    {
-        href: "https://www.collectiveabundance.org/",
-        src: `${sponsorPath}/collective_abundance.png`,
-        title: "Collective Abundance",
-    },
-];
-
-const collectives: {
-  href: string;
-  src: string;
-  title: string;
-  rounded?: boolean;
-}[] = [
-    {
-        href: "https://www.instagram.com/colectivo.amra/",
-        src: `${collectivePath}/amra.webp`,
-        title: "AMRA COLLECTIVE",
-    },
-    {
-        href: "https://www.ataec.com/user/274",
-        src: `${collectivePath}/colectivx.webp`,
-        title: "Colectivx Raíces Negras",
-        rounded: true,
-    },
-    {
-        href: "https://www.instagram.com/conuco_leipzig/",
-        src: `${collectivePath}/conuco_leipzig.webp`,
-        title: "Conuco Leipzig",
-        rounded: true,
-    },
-    {
-        href: "https://www.youtube.com/@CasaMassape",
-        src: `${collectivePath}/casa_massape.webp`,
-        title: "Massape Xilo Colectivo",
-        rounded: true,
-    },
-    {
-        href: "",
-        src: `${collectivePath}/soulartath.webp`,
-        title: "Soulartath",
-        rounded: true,
-    },
-    {
-        href: "",
-        src: `${collectivePath}/kokoko.webp`,
-        title: "Kokoko",
-        rounded: true,
-    },
-    {
-        href: "https://www.instagram.com/colectivo.mawvn/",
-        src: `${collectivePath}/mawvn.webp`,
-        title: "colectivo.mawvn",
-        rounded: true,
-    },
-    {
-        href: "https://www.instagram.com/munaykollektiv/",
-        src: `${collectivePath}/munay.webp`,
-        title: "Munay Kollektiv",
-        rounded: true,
-    },
-    {
-        href: "https://www.instagram.com/collectivesabr/",
-        src: `${collectivePath}/sabr.webp`,
-        title: "Collective Sabr",
-        rounded: true,
-    },
-    {
-        href: "https://www.instagram.com/timetospringup/",
-        src: `${collectivePath}/springup.webp`,
-        title: "Time to Spring Up",
-        rounded: true,
-    },
-    {
-        href: "",
-        src: `${collectivePath}/voces_guatemala.webp`,
-        title: "Voces de Guatemala en Berlín",
-        rounded: true,
-    },
-];
 
 export default async function InformationPage({ params }: LocaleProps) {
     const { locale } = await params;
 
     const data = await getTextData(`${pagePath}/data`, locale);
-    const sponsorsData = await getTextData("data", locale);
-    const locationText =
-    (await getTextData(`${pagePath}/location`, locale)).content;
-    const programText =
-    (await getTextData(`${pagePath}/program`, locale)).content;
+    const globalData = await getTextData("data", locale);
+    const locationText = (await getTextData(`${pagePath}/location`, locale)).content;
+    const programText = (await getTextData(`${pagePath}/program`, locale)).content;
     const awarenessConcept = await getTextData("awareness-concept", locale);
 
     return (
         <main className="min-h-screen flex flex-col items-center justify-center w-full bg-[url(/background_2.webp)] bg-fixed py-12 px-2 md:px-16">
-            <section className="flex flex-col items-center justify-center w-full gap-2">
-                <div className="flex flex-col items-start justify-start w-full md:max-w-6xl bg-black/70 rounded-xl p-4 md:p-8 shadow-2xl">
-                    <h2 className="text-xl font-extrabold tracking-tight text-left text-pink-500 md:text-4xl">
+            <section
+                className="flex flex-col items-center justify-center w-full gap-8"
+                aria-labelledby="conference-heading"
+            >
+                <div className="flex flex-col items-start justify-start w-full md:max-w-6xl bg-black/80 border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl">
+                    <h1
+                        id="conference-heading"
+                        className="text-xl font-extrabold tracking-tight text-left text-pink-400 md:text-4xl mb-4 text-balance"
+                    >
                         {data.title || "Conference 2025 Information"}
-                    </h2>
-                    <div className="mb-6 text-base leading-relaxed text-left text-neutral-300 md:text-lg">
+                    </h1>
+                    <div className="mb-6 text-base leading-relaxed text-left text-neutral-100 md:text-lg">
                         <RenderMarkdown content={data.content} />
                     </div>
 
-                    <h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+                    {/* Location */}
+                    <h2 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl text-balance">
                         {data.location || "Location"}
-                    </h3>
-                    <div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+                    </h2>
+                    <div className="mb-6 text-base leading-relaxed text-left text-neutral-200 md:text-lg">
                         <RenderMarkdown content={locationText} />
                     </div>
 
-                    <h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
-                        {data.schedule || "Program/ Schedule"}
-                    </h3>
-                    <div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+                    {/* Program / Schedule */}
+                    <h2 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl text-balance">
+                        {data.schedule || "Program / Schedule"}
+                    </h2>
+                    <div className="mb-6 text-base leading-relaxed text-left text-neutral-200 md:text-lg">
                         <RenderMarkdown content={programText} />
-
-                        <div className="space-x-2" >
-                            <LinkButton
-                                href={data.programURL}
-                                target="_blank"
-                            >
-                                {data.viewProgram}
-                            </LinkButton>
-
-                            <LinkButton
-                                href={data.programDescriptionURL}
-                                target="_blank"
-                            >
-                                {data.viewProgramDescription || "View Program Description"}
-                            </LinkButton>
+                        <div className="flex flex-wrap gap-3 mt-4">
+                            {data.programURL && (
+                                <LinkButton href={data.programURL} target="_blank" rel="noopener noreferrer">
+                                    {data.viewProgram || "View Program"}
+                                </LinkButton>
+                            )}
+                            {data.programDescriptionURL && (
+                                <LinkButton href={data.programDescriptionURL} target="_blank" rel="noopener noreferrer">
+                                    {data.viewProgramDescription || "View Program Description"}
+                                </LinkButton>
+                            )}
                         </div>
                     </div>
 
-                    <h3 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl">
+                    {/* Awareness Concept */}
+                    <h2 className="mb-2 text-lg font-bold tracking-tight text-left text-white md:text-2xl text-balance">
                         {awarenessConcept.title || "Awareness Concept"}
-                    </h3>
-                    <div className="mb-6 text-base leading-relaxed text-left text-white md:text-lg">
+                    </h2>
+                    <div className="mb-6 text-base leading-relaxed text-left text-neutral-200 md:text-lg">
                         <RenderMarkdown content={awarenessConcept.content} />
-                        <LinkButton
-                            href={AWARENESS_CONCEPT_URL}
-                            target="_blank"
-                        >
+                        <LinkButton href={AWARENESS_CONCEPT_URL} target="_blank" rel="noopener noreferrer" className="mt-4">
                             {(awarenessConcept.title || "Awareness Concept") + " PDF"}
                         </LinkButton>
                     </div>
                 </div>
 
-                <Collectives title={data.collectives} collectives={collectives} />
+                {/* Collective partners — loaded from src/data/collectives.json */}
+                <Collectives title={data.collectives} collectives={collectivesData} />
 
-                <Sponsors title={sponsorsData.sponsorsTitle} sponsors={sponsors} />
+                {/* Sponsors — loaded from src/data/sponsors.json */}
+                <Sponsors title={globalData.sponsorsTitle} sponsors={sponsorsData} />
             </section>
         </main>
     );

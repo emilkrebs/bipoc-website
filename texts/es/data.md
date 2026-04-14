@@ -1,4 +1,6 @@
 ---
+home: Inicio
+skipToContent: Ir al contenido principal
 imprint: Aviso legal
 privacy: Política de privacidad
 contact: Contacto

@@ -1,53 +1,75 @@
 # BIPoC Climate Justice Conference Website
 
-This is the source code for the official website of the **BIPoC Climate Justice
-Conference 2025**.
+Official website of the **BIPoC Climate Justice Network** — centred on BIPOC
+voices in climate justice, built with and for the community.
 
-The website supports multiple languages (English and Spanish) and automatically
-detects the user's browser language to provide the best experience.
+→ **[CONTRIBUTING.md](CONTRIBUTING.md)** — how to update content, sponsors,
+photos, and translations without writing code.
 
-## 📝 Editing Website Content (For Non-Developers)
+---
 
-You can easily update the website content by editing markdown files. No
-programming knowledge required!
+## Tech Stack
 
-### Where to find content files:
+| Tool | Purpose |
+|---|---|
+| [Next.js 16](https://nextjs.org/) | React framework, static site export |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Styling |
+| [react-markdown](https://github.com/remarkjs/react-markdown) | Markdown rendering |
+| [gray-matter](https://github.com/jonschlinkert/gray-matter) | Frontmatter parsing |
 
-All website text is stored in the `texts/` folder:
+## Site Structure
+
+```
+/                   → Auto-redirects to /en or /es (browser language detection)
+/{locale}/          → Home / landing page
+/{locale}/about     → About the conference
+/{locale}/conference-2025  → 2025 conference info, program, collectives, sponsors
+/{locale}/archive   → Archive of the 2024 summit (photos, audio, collectives)
+/{locale}/faq       → Frequently Asked Questions
+/{locale}/imprint   → Legal imprint
+/{locale}/privacy   → Privacy policy
+```
+
+## Content Organization
 
 ```
 texts/
-├── en/           # English content
-│   ├── welcome.md
-│   ├── about.md
-│   ├── archive.md
-│   ├── faq/
-│   └── conference-2025/
-└── es/           # Spanish content
-    ├── welcome.md
-    ├── about.md
-    ├── archive.md
-    ├── faq/
-    └── conference-2025/
+  en/             ← English content
+  es/             ← Spanish content
+src/data/
+  collectives.json           ← 2025 collective partners
+  sponsors.json              ← 2025 sponsors
+  archive-collectives.json   ← 2024 collective partners
+  archive-sponsors.json      ← 2024 sponsors
+public/
+  archive/2025/   ← Gallery images (auto-scanned, one subfolder = one category)
+  archive/2024/photos/  ← Slideshow images (image_1.webp, image_2.webp …)
+  collectives/    ← Collective logo files
+  sponsor/        ← Sponsor logo files
 ```
 
-### How to edit content:
+## Accessibility
 
-1. **Find the file you want to edit** in either `texts/en/` (English) or
-   `texts/es/` (Spanish)
-2. **Open the `.md` file** with any text editor (even Notepad works!)
-3. **Edit the text** below the `---` lines at the top
-4. **Save the file**
-5. **Commit and push your changes** (or ask a developer to help with this step)
+This site targets **WCAG 2.1 AA** across all pages, with AAA targets for body text:
 
-### Example:
+- Skip-to-main-content link (keyboard and screen-reader navigation)
+- All interactive elements have visible `:focus-visible` indicators
+- Images carry descriptive `alt` text; decorative images are `aria-hidden`
+- Slideshow keyboard control (← / → arrow keys)
+- Mobile menu closes on `Escape` key
+- Animations respect `prefers-reduced-motion`
+- Both navigation and footer use semantic `<nav>` / `<ul>` markup
 
-To change the welcome page text, edit `texts/en/welcome.md`:
+## Developer Setup
 
-```markdown
---- # Don't change this line title: Welcome # Here you can change the title ---
+```bash
+npm install
+npm run dev          # http://localhost:3000
+npm run build        # builds static export to /out
+npm run lint         # ESLint
+```
 
-# Don't change this line
+For detailed editing instructions see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Your content goes here... # Edit this part You can use **bold text** and
 [links](https://example.com)

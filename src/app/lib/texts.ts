@@ -1,3 +1,25 @@
+// ─── Text / Content Loader ─────────────────────────────────────────────────────
+//
+// Reads Markdown (.md) files from the  texts/  folder.
+//
+// HOW IT WORKS:
+//   • Every page loads its text from  texts/{language}/{page}.md
+//   • The file is split into two parts by gray-matter:
+//       - Frontmatter (the lines between --- and ---) → structured data (title, labels)
+//       - Body text below the frontmatter --- → the main paragraph content
+//   • If a translation is missing, the English version is used as a fallback.
+//
+// EXAMPLE FILE (texts/en/about.md):
+//   ---
+//   title: About us
+//   ---
+//   We are a network of BIPoC climate justice activists ...
+//
+// EDITING CONTENT:
+//   • To update page text: edit the .md file in  texts/en/  (or  texts/es/  for Spanish)
+//   • To add a new language: see src/app/lib/localisation.ts
+//   • To change navigation labels ("About", "FAQ" etc.): edit  texts/en/data.md
+
 import matter from "gray-matter";
 import fs from "fs";
 import path from "path";

@@ -1,4 +1,6 @@
 ---
+home: Home
+skipToContent: Skip to main content
 imprint: Imprint
 privacy: Privacy Policy
 contact: Contact

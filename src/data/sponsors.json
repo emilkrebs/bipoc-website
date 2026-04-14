@@ -1,0 +1,32 @@
+[
+  {
+    "href": "https://www.bewegungsstiftung.de/",
+    "src": "/sponsor/bewegungs_stiftung.svg",
+    "title": "Bewegungs Stiftung"
+  },
+  {
+    "href": "https://guerrillafoundation.org/",
+    "src": "/sponsor/guerrilla.svg",
+    "title": "Guerrilla Foundation"
+  },
+  {
+    "href": "https://www.heidehof-stiftung.de/",
+    "src": "/sponsor/heidenhof_stiftung.png",
+    "title": "Heidenhof Stiftung"
+  },
+  {
+    "href": "https://www.solarpowers.de/das-projekt/",
+    "src": "/sponsor/solarpowers.png",
+    "title": "Solar Powers"
+  },
+  {
+    "href": "https://www.themovementhub.org/",
+    "src": "/sponsor/movement_hub.png",
+    "title": "The Movement Hub"
+  },
+  {
+    "href": "https://www.collectiveabundance.org/",
+    "src": "/sponsor/collective_abundance.png",
+    "title": "Collective Abundance"
+  }
+]

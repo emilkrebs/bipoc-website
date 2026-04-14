@@ -1,3 +1,16 @@
+// ─── 2025 Archive Image Loader ───────────────────────────────────────────────
+//
+// Automatically scans the  public/archive/2025/  folder for .webp images.
+//
+// HOW TO ADD PHOTOS TO THE 2025 GALLERY:
+//   1. Convert your photos to .webp format (free tools: squoosh.app, imagemagick)
+//   2. Place them inside a subfolder of  public/archive/2025/
+//      For example: public/archive/2025/Day 1/my-photo.webp
+//   3. The gallery will include them automatically on the next build.
+//      No code changes needed!
+//
+// Each subfolder becomes a separate gallery category (shown as a filter tab).
+
 import fs from "fs";
 import path from "path";
 
